@@ -1,60 +1,64 @@
+
 <ion-side-menus enable-menu-with-back-views="false">
-  <ion-side-menu-content>
-    <ion-nav-bar class="bar-royal">
-      <ion-nav-back-button>
-      </ion-nav-back-button>
-      <ion-nav-buttons side="left">
-        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
-        </button>
-      </ion-nav-buttons>
-      <ion-nav-buttons side="right">
-        <button class="button button-icon button-clear ion-search">
-        </button>
-      </ion-nav-buttons>
-    </ion-nav-bar>
-    <ion-nav-view name="menuContent"></ion-nav-view>
-  </ion-side-menu-content>
-  <ion-side-menu side="left" width="220">
-    <ion-header-bar class="bar-calm">
-    </ion-header-bar>
-    <ion-content class="calm-bg" scroll="false">
-      <ion-list>
-        <ion-item class="item-calm item-icon-left menu_item" ui-sref-active="menu_active" nav-clear menu-close ui-sref="app.home">
-          <i class="icon ion-radio-waves"></i>
-          Home
-        </ion-item>
-        <ion-item class="item-calm item-icon-left menu_item" ui-sref-active="menu_active" nav-clear menu-close ui-sref="app.discover">
-          <i class="icon ion-shuffle"></i>
-          Descubra
-        </ion-item>
-        <ion-item class="item-calm item-icon-left menu_item" ui-sref-active="menu_active" nav-clear menu-close ui-sref="app.artists">
-          <i class="icon ion-person-stalker"></i>
-          Artistas
-        </ion-item>
-        <ion-item class="item-calm item-icon-left menu_item" ui-sref-active="menu_active" nav-clear menu-close ui-sref="app.cds">
-          <i class="icon ion-disc"></i>
-          Cds
-        </ion-item>
-        <ion-item class="item-calm item-icon-left menu_item" ui-sref-active="menu_active" nav-clear menu-close ng-click="login()">
-          <i class="icon ion-log-in"></i>
-          Login
-        </ion-item>
-        <ion-item class="item-calm item-icon-left menu_item" ui-sref-active="menu_active" nav-clear menu-close ui-sref="app.signup">
-          <i class="icon ion-person-add"></i>
-          Cadastre-se
-        </ion-item>
-      </ion-list>
-      <ion-footer class="stable-bg button-block main_footer">
-        <a class="item item-avatar menu_play_item" href="#">
-          <img src="http://musicatop.jelastic.websolute.net.br/public/img/a7e732ce-3a0b-4c6c-b7fd-2a243e105090.jpg"
-               class="menu_play_image">
-          <h3 style="margin-bottom: 0">General Midi</h3>
-          <p><small>When i Rock (Original Mix)</small></p>
-        </a>
-        <button class="button button-icon button-clear button-large button-royal ion-skip-backward"></button>
-        <button class="button button-icon button-clear button-large ion-play button-royal menu_play_button"></button>
-        <button class="button button-icon button-clear button-large button-royal ion-skip-forward"></button>
-      </ion-footer>
-    </ion-content>
-  </ion-side-menu>
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-royal">
+            <ion-nav-back-button>
+            </ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+                </button>
+            </ion-nav-buttons>
+            <ion-nav-buttons side="right">
+                <button class="button button-icon button-clear ion-search">
+                </button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+        <ng-include src="'views/inc/player.html'" ng-hide="isMenuOpened()">></ng-include>
+    </ion-side-menu-content>
+    <ion-side-menu side="left" width="220">
+        <ion-content class="calm-bg" scroll="false">
+            <ion-scroll style="height: 100%" has-bouncing="false">
+                <ion-list>
+                    <ion-item class="item-calm item-icon-left menu_item" ui-sref-active="menu_active" nav-clear
+                              menu-close ui-sref="app.home">
+                        <i class="icon ion-radio-waves"></i>
+                        Home
+                    </ion-item>
+                    <ion-item class="item-calm item-icon-left menu_item" ui-sref-active="menu_active" nav-clear
+                              menu-close ui-sref="app.discover">
+                        <i class="icon ion-shuffle"></i>
+                        Descubra
+                    </ion-item>
+                    <ion-item class="item-calm item-icon-left menu_item" ui-sref-active="menu_active" nav-clear
+                              menu-close ui-sref="app.artists">
+                        <i class="icon ion-person-stalker"></i>
+                        Artistas
+                    </ion-item>
+                    <ion-item class="item-calm item-icon-left menu_item" ui-sref-active="menu_active" nav-clear
+                              menu-close ui-sref="app.cds">
+                        <i class="icon ion-disc"></i>
+                        Cds
+                    </ion-item>
+                    <ion-item class="item-calm item-icon-left menu_item" ui-sref-active="menu_active" nav-clear
+                              menu-close ui-sref="app.events">
+                        <i class="icon ion-calendar"></i>
+                        Eventos
+                    </ion-item>
+                    <ion-item class="item-calm item-icon-left menu_item" ui-sref-active="menu_active" nav-clear
+                              menu-close ng-click="login()">
+                        <i class="icon ion-log-in"></i>
+                        Login
+                    </ion-item>
+                    <ion-item class="item-calm item-icon-left menu_item" ui-sref-active="menu_active" nav-clear
+                              menu-close ui-sref="app.signup">
+                        <i class="icon ion-person-add"></i>
+                        Cadastre-se
+                    </ion-item>
+                </ion-list>
+                <hr style="margin-bottom: 105px!important;opacity: 0" ng-if="showPlayer">
+            </ion-scroll>
+            <ng-include src="'views/inc/mini_player.html'" ng-if="showPlayer">></ng-include>
+        </ion-content>
+    </ion-side-menu>
 </ion-side-menus>

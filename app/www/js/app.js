@@ -16,14 +16,12 @@ angular.module('mt', ['ionic', 'mt.controllers'])
 
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
-
             .state('app', {
                 url: "/app",
                 abstract: true,
                 templateUrl: "views/screens/menu.html",
                 controller: 'AppCtrl'
             })
-
             .state('app.home', {
                 url: "/home",
                 views: {
@@ -33,7 +31,6 @@ angular.module('mt', ['ionic', 'mt.controllers'])
                     }
                 }
             })
-
             .state('app.discover', {
                 url: "/discover",
                 views: {
@@ -43,7 +40,6 @@ angular.module('mt', ['ionic', 'mt.controllers'])
                     }
                 }
             })
-
             .state('app.artists', {
                 url: "/artists",
                 views: {
@@ -53,14 +49,39 @@ angular.module('mt', ['ionic', 'mt.controllers'])
                     }
                 }
             })
-
-
             .state('app.cds', {
                 url: "/cds",
                 views: {
                     'menuContent': {
                         templateUrl: "views/screens/cds.html",
                         controller: 'Cds'
+                    }
+                }
+            })
+            .state('app.cd', {
+                url: "/cds/:id",
+                views: {
+                    'menuContent': {
+                        templateUrl: "views/screens/cd.html",
+                        controller: 'CD'
+                    }
+                }
+            })
+            .state('app.events', {
+                url: "/events",
+                views: {
+                    'menuContent': {
+                        templateUrl: "views/screens/events.html",
+                        controller: 'Events'
+                    }
+                }
+            })
+            .state('app.event', {
+                url: "/event/:id",
+                views: {
+                    'menuContent': {
+                        templateUrl: "views/screens/event.html",
+                        controller: 'Event'
                     }
                 }
             })
@@ -76,3 +97,34 @@ angular.module('mt', ['ionic', 'mt.controllers'])
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/app/home');
     });
+var functions = functions || {};
+functions = {
+    playlist: {
+        init: function (element) {
+            var _this = $(element);
+            _this.toggleClass('closed');
+            if ($('#playlist').hasClass('visible')) {
+                functions.playlist.hide();
+            } else {
+                functions.playlist.show();
+            }
+        },
+        show: function () {
+            $('#playlist').animate({'height': '110px', 'border-top': 0});
+            $('#playlist .playlist-plug').attr('title', 'Esconder Playlist');
+            $('#playlist').addClass('visible')
+        },
+        hide: function () {
+            $('#playlist').animate({'height': '0px', 'border-top': '1px solid #3a3a3a'});
+            $('#playlist .playlist-plug').attr('title', 'Abrir Playlist');
+            $('#playlist').removeClass('visible');
+        }
+    }
+};
+$(window).load(function () {
+    // Plug Playlist
+    $(document).on('click', '.playlist-plug', function (e) {
+        e.preventDefault();
+        functions.playlist.init(this);
+    });
+});

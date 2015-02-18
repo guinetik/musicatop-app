@@ -1,11 +1,15 @@
 angular.module('mt.controllers', [])
 
-    .controller('AppCtrl', function ($scope, $ionicModal, $timeout) {
+    .controller('AppCtrl', function ($scope, $ionicModal, $timeout, $ionicSideMenuDelegate) {
+        $scope.showPlayer = true;
+        $scope.isMenuOpened = function() {
+            return $ionicSideMenuDelegate.isOpen()
+        };
         // Form data for the login modal
         $scope.loginData = {};
 
         // Create the login modal that we will use later
-        $ionicModal.fromTemplateUrl('templates/login.html', {
+        $ionicModal.fromTemplateUrl('views/screens/login.html', {
             scope: $scope
         }).then(function (modal) {
             $scope.modal = modal;
@@ -33,7 +37,7 @@ angular.module('mt.controllers', [])
         };
     })
 
-    .controller('Home', function ($scope) {
+    .controller('Home', function ($scope, $rootScope) {
         $scope.playlists = [
             {title: 'Reggae', id: 1},
             {title: 'Chill', id: 2},
@@ -42,6 +46,11 @@ angular.module('mt.controllers', [])
             {title: 'Rap', id: 5},
             {title: 'Cowbell', id: 6}
         ];
+        $scope.$on('$ionicView.enter', function (event) {
+            setTimeout(function () {
+                functions.playlist.hide();
+            }, 100);
+        });
     })
 
     .controller('Discover', function ($scope, $stateParams) {
@@ -50,7 +59,16 @@ angular.module('mt.controllers', [])
     .controller('Cds', function ($scope, $stateParams) {
     })
 
+    .controller('CD', function ($scope, $stateParams) {
+    })
+
     .controller('Artists', function ($scope, $stateParams) {
+    })
+
+    .controller('Events', function ($scope, $stateParams) {
+    })
+
+    .controller('Event', function ($scope, $stateParams) {
     })
 
     .controller('Signup', function ($scope, $stateParams) {

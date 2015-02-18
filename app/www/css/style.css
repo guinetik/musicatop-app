@@ -48,7 +48,8 @@
 
 .header-item {
     font-family: "pf_square_sans_proextra_black";
-    font-size: 24px!important;
+    font-size: 18px!important;
+
 }
 
 .menu_play_button {
@@ -65,6 +66,7 @@
     position: absolute;
     bottom: 0;
     display: block;
+    z-index: 100000;
     width: 100%;
 }
 
@@ -76,6 +78,7 @@
 
 .slider {
     height: auto;
+    min-height: 200px;
 }
 
 .slider .slider-pager {
@@ -86,10 +89,11 @@
     color:white;
 }
 .home_slide {
-    max-height: 90%!important;
+    min-height: 100%;
 }
 .home_slide img {
     width: 100%;
+    min-height: 200px;
 }
 
 .playlist-plug span {
@@ -143,4 +147,8 @@
     border-color: #2f365b!important;
     background-color: #f8f8f8!important;
     color: #e11d70!important;
+}
+
+.playlist-plug.closed span {
+    background-position: -431px -82px;
 }
