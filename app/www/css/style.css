@@ -1,0 +1,146 @@
+
+@font-face {
+    font-family: "pf_square_sans_probold";
+    src: url("fonts/pfsquaresanspro-bold-webfont.eot");
+    src: url("fonts/pfsquaresanspro-bold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/pfsquaresanspro-bold-webfont.woff2") format("woff2"), url("fonts/pfsquaresanspro-bold-webfont.woff") format("woff"), url("fonts/pfsquaresanspro-bold-webfont.ttf") format("truetype"), url("fonts/pfsquaresanspro-bold-webfont.svg#pf_square_sans_probold") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "pf_square_sans_proextra_black";
+    src: url("fonts/pfsquaresanspro-xblack-webfont.eot");
+    src: url("fonts/pfsquaresanspro-xblack-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/pfsquaresanspro-xblack-webfont.woff2") format("woff2"), url("fonts/pfsquaresanspro-xblack-webfont.woff") format("woff"), url("fonts/pfsquaresanspro-xblack-webfont.ttf") format("truetype"), url("fonts/pfsquaresanspro-xblack-webfont.svg#pf_square_sans_proextra_black") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "pf_square_sans_proregular";
+    src: url("fonts/pfsquaresanspro-regular-webfont.eot");
+    src: url("fonts/pfsquaresanspro-regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/pfsquaresanspro-regular-webfont.woff2") format("woff2"), url("fonts/pfsquaresanspro-regular-webfont.woff") format("woff"), url("fonts/pfsquaresanspro-regular-webfont.ttf") format("truetype"), url("fonts/pfsquaresanspro-regular-webfont.svg#pf_square_sans_proregular") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "pf_square_sans_prolight";
+    src: url("fonts/pfsquaresanspro-light-webfont.eot");
+    src: url("fonts/pfsquaresanspro-light-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/pfsquaresanspro-light-webfont.woff2") format("woff2"), url("fonts/pfsquaresanspro-light-webfont.woff") format("woff"), url("fonts/pfsquaresanspro-light-webfont.ttf") format("truetype"), url("fonts/pfsquaresanspro-light-webfont.svg#pf_square_sans_prolight") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.menu_play_item {
+    max-height: 60px;
+    padding-left: 50px;
+    padding-top: 12px;
+    min-height: 60px;
+}
+.menu_play_item h3{
+    font-family: "pf_square_sans_proregular";
+}
+
+.menu_play_item p{
+    font-family: "pf_square_sans_proregular";
+    font-size: 16px;
+}
+
+.header-item {
+    font-family: "pf_square_sans_proextra_black";
+    font-size: 24px!important;
+}
+
+.menu_play_button {
+    margin-left: 30%;
+    margin-right: 26%;
+}
+
+.main_menu_play_button {
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.main_footer {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+}
+
+.menu_play_image {
+    left: 5px!important;
+    top: 10px!important;
+    border-radius: 5px!important;
+}
+
+.slider {
+    height: auto;
+}
+
+.slider .slider-pager {
+    bottom: 20px;
+}
+
+.slider .slider-pager .icon {
+    color:white;
+}
+.home_slide {
+    max-height: 90%!important;
+}
+.home_slide img {
+    width: 100%;
+}
+
+.playlist-plug span {
+    width: 16px;
+    height: 16px;
+    background-position: -415px -82px;
+    position: absolute;
+    left: 11px;
+    top: 12px;
+    background-image: url(http://musicatop.jelastic.websolute.net.br/app/images/sprite.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.playlist-plug:active {
+    background: white;
+}
+.playlist-plug {
+    display: block;
+    position: absolute;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    top: -40px;
+    background: #404a7d;
+    border: 1px solid #404a7d;
+    border-bottom: 0;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    -ms-border-radius: 4px 4px 0 0;
+    -o-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+    text-indent: -9999em;
+}
+
+.home_header {
+    text-transform: uppercase;
+    color: #404a7d;
+    font-size: 32px;
+    font-family: "pf_square_sans_prolight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: -0.08em;
+    line-height: 26px;
+}
+
+.menu_item {
+    font-family: "pf_square_sans_probold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+.menu_active .item-content{
+    border-color: #2f365b!important;
+    background-color: #f8f8f8!important;
+    color: #e11d70!important;
+}

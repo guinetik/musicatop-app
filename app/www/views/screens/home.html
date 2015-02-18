@@ -1,0 +1,44 @@
+<ion-view view-title="MusicaTop">
+    <ion-content scroll="false" class="calm-bg">
+        <ion-slide-box active-slide="myActiveSlide">
+            <ion-slide>
+                <div class="home_slide calm-bg"><img
+                        src="http://musicatop.jelastic.websolute.net.br/public/img/476452_469301026474788_1140330259_o1-1000x368.jpg">
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <div class="home_slide calm-bg"><img
+                        src="http://musicatop.jelastic.websolute.net.br/public/img/nirvana2.jpg" alt=""/></div>
+            </ion-slide>
+            <ion-slide>
+                <div class="home_slide calm-bg"><img
+                        src="http://musicatop.jelastic.websolute.net.br/public/img/10623306_849829288369870_6340214045664897850_o-1000x368.jpg"
+                        alt=""/></div>
+            </ion-slide>
+        </ion-slide-box>
+        <ion-scroll style="height: 100%">
+            <ion-list>
+                <ion-item class="item-divider item-calm home_header">Top Downloads</ion-item>
+                <ion-item class="item-thumbnail-left" ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
+                    <img src="cover.jpg">
+                    <h2>Pretty Hate Machine</h2>
+                    <p>Nine Inch Nails</p>
+                </ion-item>
+                <ion-item class="item-divider item-calm home_header">Novidades</ion-item>
+                <ion-item class="item-thumbnail-left" ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
+                    <img src="cover.jpg">
+                    <h2>Pretty Hate Machine</h2>
+                    <p>Nine Inch Nails</p>
+                </ion-item>
+                <ion-item class="item-divider item-calm home_header">Próximos Eventos</ion-item>
+                <ion-item class="item-avatar" ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
+                    <img src="venkman.jpg">
+                    <h2>Venkman</h2>
+                    <p>Back off, man. I'm a scientist.</p>
+                </ion-item>
+            </ion-list>
+            <hr style="margin-bottom: 230px!important;opacity: 0">
+        </ion-scroll>
+        <ng-include src="'views/inc/player.html'"></ng-include>
+    </ion-content>
+</ion-view>
