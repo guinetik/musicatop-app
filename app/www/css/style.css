@@ -152,3 +152,98 @@
 .playlist-plug.closed span {
     background-position: -431px -82px;
 }
+
+img.blur {-webkit-filter: blur(10px); filter: blur(10px); }
+
+.cd_cover_bg {
+    position: relative;
+    width: 120%;
+    left: -5%;
+    top:-10px;
+    overflow: hidden;
+    z-index: 0;
+    display: block;
+    min-height: 400px;
+}
+
+.cd_cover {
+    width: 200px;
+    margin-left: 50px;
+}
+
+.cd_header {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    display: block;
+}
+
+.cd_info_box {
+    position: absolute;
+    top: 10px;
+    width: 320px;
+    left: 50%;
+    margin-left: -160px;
+    z-index: 0;
+    display: block;
+}
+
+.cd_name {
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-size: 32px;
+    font-family: "pf_square_sans_prolight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: -0.09em;
+    text-shadow: 2px 2px 5px #000000;
+}
+
+.cd_description {
+    font-family: "pf_square_sans_prolight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 10px;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.song_title {
+    font-family: "pf_square_sans_probold";
+    margin-left: 10px;
+}
+
+.track_number {
+    position: static!important;
+    float: left;
+    margin-left: -10px!important;
+    text-align: center;
+    width: 30px;
+}
+
+.cd_info_box .dados dl dt {
+    display: block;
+    text-transform: uppercase;
+    font: normal 11px "pf_square_sans_proregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: white;
+}
+
+.cd_info_box .dados dl dd {
+    font: normal 13px "pf_square_sans_probold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #e11d70;
+    text-align: center;
+}
+
+.cd_info_box .dados {
+    width: 100%;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 5px;
+    background: rgba(1,1,1,0.6);
+    overflow: hidden;
+}
+.dados dl:first-child {
+    margin-left: 0;
+}
+
+.dados dl {
+    float: left;
+    margin-left: 40px;
+}

@@ -1,5 +1,44 @@
-<ion-view view-title="CD">
-  <ion-content>
+<ion-view view-title="MÚSICA TOP">
+    <ion-content>
+        <section class="cd_header">
+            <img src="http://musicatop.jelastic.websolute.net.br/public/img/6c9a8245-40d3-4731-9cfc-78d2cc541c67.jpg"
+                 class="cd_cover_bg blur"/>
 
-  </ion-content>
+            <div class="cd_info_box">
+                <h3 class="cd_name">BOB MARLEY - LEGEND</h3>
+                <img src="http://musicatop.jelastic.websolute.net.br/public/img/6c9a8245-40d3-4731-9cfc-78d2cc541c67.jpg"
+                     class="cd_cover"/>
+                <div class="dados">
+                    <dl>
+                        <dt>Tamanho do CD</dt>
+                        <dd>20{{cd.size}}MB</dd>
+                    </dl>
+                    <dl>
+                        <dt>Data de Envio</dt>
+                        <dd>20/02/2015{{cd.createdAt|date : "dd/MM/yyyy"}}</dd>
+                    </dl>
+                    <dl>
+                        <dt>Downloads</dt>
+                        <dd>32{{cd.downloads}}</dd>
+                    </dl>
+                </div>
+            </div>
+        </section>
+        <ion-list>
+            <ion-item class="item-divider item-calm home_header">MÚSICAS</ion-item>
+            <ion-item class="item-icon-right item-stable" ng-click="addToPlaylist()">
+                <span class="badge badge-calm track_number">01</span>
+                <span class="song_title royal">Kaya Now</span>
+                <i class="icon ion-play royal"></i>
+            </ion-item>
+        </ion-list>
+        <ion-item class="item-divider item-calm home_header">DESCRIÇÃO</ion-item>
+        <p class="cd_description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+            has been the
+            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+            electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
+            Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+            Aldus PageMaker including versions of Lorem Ipsum.</p>
+    </ion-content>
 </ion-view>

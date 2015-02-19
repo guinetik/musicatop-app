@@ -13,7 +13,10 @@ angular.module('mt', ['ionic', 'mt.controllers'])
             }
         });
     })
-
+    .config(function($ionicConfigProvider) {
+        $ionicConfigProvider.backButton.text('').icon('ion-ios7-arrow-left');
+        $ionicConfigProvider.backButton.previousTitleText(false);
+    })
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state('app', {
@@ -111,12 +114,12 @@ functions = {
         },
         show: function () {
             $('#playlist').animate({'height': '110px', 'border-top': 0});
-            $('#playlist .playlist-plug').attr('title', 'Esconder Playlist');
+            $('.playlist-plug').attr('title', 'Esconder Playlist');
             $('#playlist').addClass('visible')
         },
         hide: function () {
             $('#playlist').animate({'height': '0px', 'border-top': '1px solid #3a3a3a'});
-            $('#playlist .playlist-plug').attr('title', 'Abrir Playlist');
+            $('.playlist-plug').attr('title', 'Abrir Playlist');
             $('#playlist').removeClass('visible');
         }
     }

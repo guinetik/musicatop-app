@@ -2,7 +2,8 @@ angular.module('mt.controllers', [])
 
     .controller('AppCtrl', function ($scope, $ionicModal, $timeout, $ionicSideMenuDelegate) {
         $scope.showPlayer = true;
-        $scope.isMenuOpened = function() {
+        $scope.nowPlaying = false;
+        $scope.isMenuOpened = function () {
             return $ionicSideMenuDelegate.isOpen()
         };
         // Form data for the login modal
@@ -25,6 +26,15 @@ angular.module('mt.controllers', [])
             $scope.modal.show();
         };
 
+        $scope.$on('$ionicView.enter', function (event) {
+            if ($scope.nowPlaying) {
+                setTimeout(function () {
+                    functions.playlist.hide();
+                    $('.playlist-plug').addClass("closed");
+                }, 100);
+            }
+        });
+
         // Perform the login action when the user submits the login form
         $scope.doLogin = function () {
             console.log('Doing login', $scope.loginData);
@@ -46,11 +56,6 @@ angular.module('mt.controllers', [])
             {title: 'Rap', id: 5},
             {title: 'Cowbell', id: 6}
         ];
-        $scope.$on('$ionicView.enter', function (event) {
-            setTimeout(function () {
-                functions.playlist.hide();
-            }, 100);
-        });
     })
 
     .controller('Discover', function ($scope, $stateParams) {
