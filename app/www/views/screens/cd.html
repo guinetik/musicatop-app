@@ -8,7 +8,9 @@
                 <h3 class="cd_name">BOB MARLEY - LEGEND</h3>
                 <img src="http://musicatop.jelastic.websolute.net.br/public/img/6c9a8245-40d3-4731-9cfc-78d2cc541c67.jpg"
                      class="cd_cover"/>
-                <div class="dados">
+            </div>
+            <div class="dados">
+                <div style="width: 320px;position:relative;left:50%;margin-left: -160px">
                     <dl>
                         <dt>Tamanho do CD</dt>
                         <dd>20{{cd.size}}MB</dd>
@@ -22,6 +24,13 @@
                         <dd>32{{cd.downloads}}</dd>
                     </dl>
                 </div>
+            </div>
+            <div class="cd-user">
+                        <span class="avatar">
+                            <img src="/public/img/d817ce26-e390-4dda-9d56-9590469e8c5b.jpg" style="width: 34px;height:34px" ng-src="/public/img/d817ce26-e390-4dda-9d56-9590469e8c5b.jpg">
+                        </span>
+                <small>por:</small>
+                <a ui-sref="perfil({id:cd.artista.id})" class="user ng-binding" href="#/perfil/54cac0abe660838071e2390e">Guinetfwefwefik</a>
             </div>
         </section>
         <ion-list>
