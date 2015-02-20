@@ -159,8 +159,9 @@ img.blur {-webkit-filter: blur(10px); filter: blur(10px); }
 }
 .cd_cover {
     width: 200px;
-    margin-left: 50px;
-    margin-top: 30px;
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
 }
 .cd_header {
     width: 100%;
@@ -170,14 +171,14 @@ img.blur {-webkit-filter: blur(10px); filter: blur(10px); }
 }
 .cd_info_box {
     position: absolute;
-    top: 10px;
-    width: 320px;
-    left: 50%;
-    margin-left: -160px;
+    left: 0;
+    top: 0;
+    width: 100%;
     z-index: 0;
     display: block;
 }
 .cd_name {
+    width: 100%;
     color: white;
     text-align: center;
     font-size: 32px;
@@ -185,11 +186,6 @@ img.blur {-webkit-filter: blur(10px); filter: blur(10px); }
     letter-spacing: -0.05em;
     text-shadow: 2px 2px 5px #000000;
     text-transform: uppercase;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    margin-left: 10px;
-    margin-right: 10px !important;
 }
 .cd_description {
     font-family: "pf_square_sans_prolight", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -265,10 +261,10 @@ img.blur {-webkit-filter: blur(10px); filter: blur(10px); }
 }
 .cd-user {
     position: absolute;
-    top:50px;
+    top: 260px;
     right: 0;
     z-index: 10000;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.5);
     width: auto;
     height: 34px;
     border-radius: 16px;
@@ -295,18 +291,18 @@ img.blur {-webkit-filter: blur(10px); filter: blur(10px); }
     margin-left: 40px;
     margin-top: 5px;
     font-size: 11px;
-    color: #2f365b;
-    text-shadow: 2px 2px 5px #404a7d;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 5px #000000;
 }
 .cd-user .user {
-    text-shadow: 2px 2px 5px #404a7d;
+    text-shadow: 1px 1px 5px #000000;
     font-size: 14px;
     display: inline;
     font-family: "pf_square_sans_proregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .cd-user a {
-    color: #2f365b;
+    color: #FFFFFF;
     text-decoration: none;
 }
 
