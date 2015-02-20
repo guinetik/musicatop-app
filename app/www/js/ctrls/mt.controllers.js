@@ -1,5 +1,5 @@
 var ctrls = angular.module('mt.controllers', []);
-ctrls.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $ionicSideMenuDelegate) {
+ctrls.controller('AppCtrl', function ($scope, $rootScope, $ionicModal, $timeout, $ionicSideMenuDelegate) {
     $scope.showPlayer = true;
     $scope.nowPlaying = false;
     $scope.isMenuOpened = function () {
@@ -24,6 +24,11 @@ ctrls.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $ionicSideM
     $scope.login = function () {
         $scope.modal.show();
     };
+
+    $rootScope.$on("add-to-playlist", function (event, musica) {
+        console.log("musica", musica);
+        $scope.showPlayer = $scope.nowPlaying = true;
+    });
 
     $scope.$on('$ionicView.enter', function (event) {
         if ($scope.nowPlaying) {
