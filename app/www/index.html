@@ -7,30 +7,42 @@
     <!-- compiled css output -->
     <link href="css/ionic.app.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <!-- ionic/angularjs js -->
-    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <link href="lib/angular-toastr/dist/angular-toastr.min.css" rel="stylesheet">
+    <link href="lib/angular-block-ui/dist/angular-block-ui.min.css" rel="stylesheet">
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
-    <!-- your app's js -->
-    <script src="js/ctrls/mt.controllers.js"></script>
-    <script src="js/ctrls/Artists.js"></script>
-    <script src="js/ctrls/CD.js"></script>
-    <script src="js/ctrls/Cds.js"></script>
-    <script src="js/ctrls/Discover.js"></script>
-    <script src="js/ctrls/Event.js"></script>
-    <script src="js/ctrls/Events.js"></script>
-    <script src="js/ctrls/Home.js"></script>
-    <script src="js/ctrls/Login.js"></script>
-    <script src="js/ctrls/Perfil.js"></script>
-    <script src="js/ctrls/Signup.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/config/config.js"></script>
-    <script src="js/config/routes.js"></script>
-    <script src="js/directives/sticky.js"></script>
 </head>
 
 <body ng-app="mt">
 <ion-nav-view></ion-nav-view>
+<!-- ionic/angularjs js -->
+<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="lib/ionic/js/ionic.bundle.js"></script>
+<script src="lib/angular-toastr/dist/angular-toastr.min.js"></script>
+<script src="lib/angular-img-fallback/angular.dcb-img-fallback.min.js"></script>
+<script src="lib/moment/moment.js"></script>
+<script src="lib/moment/locale/pt-br.js"></script>
+<script src="lib/angular-moment/angular-moment.min.js"></script>
+<script src="lib/angular-media-player/dist/angular-media-player.min.js"></script>
+<script src="lib/angular-block-ui/dist/angular-block-ui.min.js"></script>
+<!-- your app's js -->
+<script src="js/app.js"></script>
+<script src="js/services/api.js"></script>
+<script src="js/services/auth.js"></script>
+<script src="js/services/ws.js"></script>
+<script src="js/ctrls/mt.controllers.js"></script>
+<script src="js/ctrls/Artists.js"></script>
+<script src="js/ctrls/CD.js"></script>
+<script src="js/ctrls/Cds.js"></script>
+<script src="js/ctrls/Discover.js"></script>
+<script src="js/ctrls/Event.js"></script>
+<script src="js/ctrls/Events.js"></script>
+<script src="js/ctrls/Home.js"></script>
+<script src="js/ctrls/Login.js"></script>
+<script src="js/ctrls/Perfil.js"></script>
+<script src="js/ctrls/Signup.js"></script>
+<script src="js/config/config.js"></script>
+<script src="js/config/routes.js"></script>
+<script src="js/directives/sticky.js"></script>
 </body>
 </html>

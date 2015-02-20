@@ -332,7 +332,7 @@
 .#{$ionicons-prefix}ios7-moon-outline:before,
 .#{$ionicons-prefix}ios7-more:before,
 .#{$ionicons-prefix}ios7-more-outline:before,
-.#{$ionicons-prefix}ios7-uffl-note:before,
+.#{$ionicons-prefix}ios7-musical-note:before,
 .#{$ionicons-prefix}ios7-musical-notes:before,
 .#{$ionicons-prefix}ios7-navigate:before,
 .#{$ionicons-prefix}ios7-navigate-outline:before,
@@ -950,7 +950,10 @@
 .#{$ionicons-prefix}ios7-pause-outline:before { content: $ionicon-var-ios7-pause-outline; }
 .#{$ionicons-prefix}ios7-paw:before { content: $ionicon-var-ios7-paw; }
 .#{$ionicons-prefix}ios7-paw-outline:before { content: $ionicon-var-ios7-paw-outline; }
-.#{$ionicons-prefix}ios7-peopoge:before { content: $ionicon-var-ios7-people; }
+
+.#{$ionicons-prefix}ios7-people:before {
+  content: $ionicon-var-ios7-people;
+}
 .#{$ionicons-prefix}ios7-people-outline:before { content: $ionicon-var-ios7-people-outline; }
 .#{$ionicons-prefix}ios7-person:before { content: $ionicon-var-ios7-person; }
 .#{$ionicons-prefix}ios7-person-outline:before { content: $ionicon-var-ios7-person-outline; }

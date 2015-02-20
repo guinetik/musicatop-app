@@ -1,40 +1,49 @@
 <ion-view view-title="MusicaTop">
     <ion-content class="calm-bg">
-        <ion-slide-box active-slide="myActiveSlide" does-continue="true" auto-play="true">
-            <ion-slide>
-                <div class="home_slide calm-bg"><img
-                        src="http://musicatop.jelastic.websolute.net.br/public/img/476452_469301026474788_1140330259_o1-1000x368.jpg">
-                </div>
-            </ion-slide>
-            <ion-slide>
-                <div class="home_slide calm-bg"><img
-                        src="http://musicatop.jelastic.websolute.net.br/public/img/nirvana2.jpg" alt=""/></div>
-            </ion-slide>
-            <ion-slide>
-                <div class="home_slide calm-bg"><img
-                        src="http://musicatop.jelastic.websolute.net.br/public/img/10623306_849829288369870_6340214045664897850_o-1000x368.jpg"
-                        alt=""/></div>
-            </ion-slide>
-        </ion-slide-box>
+        <div ng-if="bannersLoaded">
+            <ion-slide-box active-slide="myActiveSlide" does-continue="true" auto-play="true">
+                <ion-slide ng-repeat="banner in home.banners">
+                    <div class="home_slide calm-bg">
+                        <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{banner.src}}">
+                    </div>
+                </ion-slide>
+            </ion-slide-box>
             <ion-list>
                 <ion-item class="item-divider item-calm home_header">Top Downloads</ion-item>
-                <ion-item class="item-thumbnail-left" ng-repeat="playlist in playlists" ui-sref="app.cd({id:1})">
-                    <img src="cover.jpg">
-                    <h2>Pretty Hate Machine</h2>
-                    <p>Nine Inch Nails</p>
+                <ion-item class="item-thumbnail-left cd_item" ng-repeat="cd in home.mais_baixados"
+                          ui-sref="app.cd({id:cd.id})">
+                    <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{cd.capa}}">
+
+                    <h2>{{cd.titulo}}</h2>
+
+                    <p>Enviado por: {{cd.artista.nome}}<br/><span class="cd_downloads">{{cd.downloads}} Downloads</span><br/><span
+                            am-time-ago="cd.createdAt"></span></p>
                 </ion-item>
                 <ion-item class="item-divider item-calm home_header">Novidades</ion-item>
-                <ion-item class="item-thumbnail-left" ng-repeat="playlist in playlists" ui-sref="app.cd({id:1})">
-                    <img src="cover.jpg">
-                    <h2>Pretty Hate Machine</h2>
-                    <p>Nine Inch Nails</p>
+                <ion-item class="item-thumbnail-left cd_item" ng-repeat="cd in home.uploads"
+                          ui-sref="app.cd({id:cd.id})">
+                    <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{cd.capa}}">
+
+                    <h2>{{cd.titulo}}</h2>
+
+                    <p>Enviado por: {{cd.artista.nome}}<br/><span class="cd_downloads">{{cd.downloads}} Downloads</span><br/><span
+                            am-time-ago="cd.createdAt"></span></p>
                 </ion-item>
                 <ion-item class="item-divider item-calm home_header">Próximos Eventos</ion-item>
-                <ion-item class="item-avatar" ng-repeat="playlist in playlists" ui-sref="app.event({id:1})">
-                    <img src="venkman.jpg">
-                    <h2>Venkman</h2>
-                    <p>Back off, man. I'm a scientist.</p>
+                <ion-item class="item-avatar item_evento" ng-repeat="evento in home.eventos"
+                          ui-sref="app.event({id:evento.id})">
+                    <div class="event_title">
+                        <h2>{{evento.nome}}</h2>
+
+                        <p>
+                            <strong class="dates">{{evento.inicio| amCalendar}}</strong>
+                            <br/>
+                            <span class="local">{{evento.local.name}}/ {{evento.cidade.nome}}</span>
+                        </p></div>
+                    <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{evento.foto}}"
+                         class="event_picture">
                 </ion-item>
             </ion-list>
+        </div>
     </ion-content>
 </ion-view>

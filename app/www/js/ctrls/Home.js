@@ -2,13 +2,22 @@
  * Created by guinetik on 2/20/15.
  */
 angular.module('mt.controllers').controller('Home', Home);
-function Home($scope, $rootScope) {
-    $scope.playlists = [
-        {title: 'Reggae', id: 1},
-        {title: 'Chill', id: 2},
-        {title: 'Dubstep', id: 3},
-        {title: 'Indie', id: 4},
-        {title: 'Rap', id: 5},
-        {title: 'Cowbell', id: 6}
-    ];
+function Home($scope, $rootScope, api, $timeout) {
+    $scope.home = {};
+    $scope.$on('$ionicView.beforeEnter', function (event) {
+        $scope.bannersLoaded = false;
+    });
+    $scope.$on('$ionicView.enter', function (event) {
+        $timeout($scope.updateHome);
+    });
+    $scope.updateHome = function () {
+        api.getHome(function (result) {
+            if (result.status == 200) {
+                $scope.bannersLoaded = true;
+                $scope.home = result.home;
+            } else {
+                window.location.reload();
+            }
+        });
+    };
 }
