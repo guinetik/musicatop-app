@@ -1,5 +1,5 @@
 <ion-view view-title="MusicaTop">
-    <ion-content scroll="false" class="calm-bg">
+    <ion-content class="calm-bg">
         <ion-slide-box active-slide="myActiveSlide" does-continue="true" auto-play="true">
             <ion-slide>
                 <div class="home_slide calm-bg"><img
@@ -16,7 +16,6 @@
                         alt=""/></div>
             </ion-slide>
         </ion-slide-box>
-        <ion-scroll style="height: 100%">
             <ion-list>
                 <ion-item class="item-divider item-calm home_header">Top Downloads</ion-item>
                 <ion-item class="item-thumbnail-left" ng-repeat="playlist in playlists" ui-sref="app.cd({id:1})">
@@ -37,7 +36,5 @@
                     <p>Back off, man. I'm a scientist.</p>
                 </ion-item>
             </ion-list>
-            <hr style="margin-bottom: 190px!important;opacity: 0">
-        </ion-scroll>
     </ion-content>
 </ion-view>
