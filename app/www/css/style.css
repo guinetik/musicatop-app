@@ -178,13 +178,18 @@ img.blur {-webkit-filter: blur(10px); filter: blur(10px); }
     display: block;
 }
 .cd_name {
-    width: 100%;
     color: white;
     text-align: center;
     font-size: 32px;
     font-family: "pf_square_sans_prolight", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    letter-spacing: -0.09em;
+    letter-spacing: -0.05em;
     text-shadow: 2px 2px 5px #000000;
+    text-transform: uppercase;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-left: 10px;
+    margin-right: 10px !important;
 }
 .cd_description {
     font-family: "pf_square_sans_prolight", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -285,20 +290,23 @@ img.blur {-webkit-filter: blur(10px); filter: blur(10px); }
     border: 2px solid #ebeeef;
 }
 .cd-user small {
+    padding-top: 2px;
     display: inline-block;
     margin-left: 40px;
     margin-top: 5px;
     font-size: 11px;
-    color: #e11d70;
+    color: #2f365b;
+    text-shadow: 2px 2px 5px #404a7d;
 }
 .cd-user .user {
+    text-shadow: 2px 2px 5px #404a7d;
     font-size: 14px;
     display: inline;
     font-family: "pf_square_sans_proregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .cd-user a {
-    color: #e11d70;
+    color: #2f365b;
     text-decoration: none;
 }
 
