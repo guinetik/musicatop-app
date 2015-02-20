@@ -1,53 +1,51 @@
 <ion-view view-title="MÚSICA TOP">
     <ion-content>
-        <section class="cd_header">
-            <img src="http://musicatop.jelastic.websolute.net.br/public/img/6c9a8245-40d3-4731-9cfc-78d2cc541c67.jpg"
-                 class="cd_cover_bg blur"/>
+        <div ng-if="dataLoaded">
+            <section class="cd_header">
+                <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{cd.capa}}"
+                     class="cd_cover_bg blur"/>
 
-            <div class="cd_info_box">
-                <h3 class="cd_name">BOB MARLEY - LEGEND</h3>
-                <img src="http://musicatop.jelastic.websolute.net.br/public/img/6c9a8245-40d3-4731-9cfc-78d2cc541c67.jpg"
-                     class="cd_cover"/>
-            </div>
-            <div class="dados">
-                <div style="width: 320px;position:relative;left:50%;margin-left: -160px">
-                    <dl>
-                        <dt>Tamanho do CD</dt>
-                        <dd>20{{cd.size}}MB</dd>
-                    </dl>
-                    <dl>
-                        <dt>Data de Envio</dt>
-                        <dd>20/02/2015{{cd.createdAt|date : "dd/MM/yyyy"}}</dd>
-                    </dl>
-                    <dl>
-                        <dt>Downloads</dt>
-                        <dd>32{{cd.downloads}}</dd>
-                    </dl>
+                <div class="cd_info_box">
+                    <h3 class="cd_name">{{cd.titulo}}</h3>
+                    <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{cd.capa}}"
+                         class="cd_cover"/>
                 </div>
-            </div>
-            <div class="cd-user">
+                <div class="dados">
+                    <div style="width: 320px;position:relative;left:50%;margin-left: -160px">
+                        <dl>
+                            <dt>Tamanho do CD</dt>
+                            <dd>{{cd.size}}MB</dd>
+                        </dl>
+                        <dl>
+                            <dt>Data de Envio</dt>
+                            <dd>{{cd.createdAt|date : "dd/MM/yyyy"}}</dd>
+                        </dl>
+                        <dl>
+                            <dt>Downloads</dt>
+                            <dd>{{cd.downloads}}</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="cd-user">
                         <span class="avatar">
-                            <img src="/public/img/d817ce26-e390-4dda-9d56-9590469e8c5b.jpg" style="width: 34px;height:34px" ng-src="/public/img/d817ce26-e390-4dda-9d56-9590469e8c5b.jpg">
+                            <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{cd.artista.foto}}"
+                                 style="width: 34px;height:34px">
                         </span>
-                <small>por:</small>
-                <a ui-sref="app.perfil({id:1})" class="user ng-binding">Guinetfwefwefik</a>
-            </div>
-        </section>
-        <ion-list>
-            <ion-item class="item-divider item-calm home_header">MÚSICAS</ion-item>
-            <ion-item class="item-icon-right item-stable" ng-click="addToPlaylist()">
-                <span class="badge badge-calm track_number">01</span>
-                <span class="song_title royal">Kaya Now</span>
-                <i class="icon ion-play royal"></i>
-            </ion-item>
-        </ion-list>
-        <ion-item class="item-divider item-calm home_header">DESCRIÇÃO</ion-item>
-        <p class="cd_description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-            has been the
-            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-            scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
-            electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
-            Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
-            Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <small>por:</small>
+                    <a ui-sref="app.perfil({id:cd.artista.id})" class="user ng-binding">{{cd.artista.nome}}</a>
+                </div>
+            </section>
+            <ion-list>
+                <ion-item class="item-divider item-calm home_header">MÚSICAS</ion-item>
+                <ion-item class="item-icon-right item-stable" ng-click="addToPlaylist(musica)"
+                          ng-repeat="musica in cd.musicas|orderBy:'track'">
+                    <span class="badge badge-calm track_number">{{musica.track}}</span>
+                    <span class="song_title royal">{{musica.nome}}</span>
+                    <i class="icon ion-play royal"></i>
+                </ion-item>
+            </ion-list>
+            <ion-item class="item-divider item-calm home_header">DESCRIÇÃO</ion-item>
+            <p class="cd_description">{{cd.descricao}}</p>
+        </div>
     </ion-content>
 </ion-view>

@@ -263,7 +263,7 @@ img.blur {-webkit-filter: blur(10px); filter: blur(10px); }
     top:50px;
     right: 0;
     z-index: 10000;
-    background: rgba(0,0,0,0.5);
+    background: rgba(255, 255, 255, 0.5);
     width: auto;
     height: 34px;
     border-radius: 16px;
@@ -289,7 +289,7 @@ img.blur {-webkit-filter: blur(10px); filter: blur(10px); }
     margin-left: 40px;
     margin-top: 5px;
     font-size: 11px;
-    color: #FFFFFF;
+    color: #e11d70;
 }
 .cd-user .user {
     font-size: 14px;
@@ -323,8 +323,8 @@ img.blur {-webkit-filter: blur(10px); filter: blur(10px); }
     border-radius: 0 !important;
     left: 0 !important;
     top: 0 !important;
-    height: 100% !important;
-    min-height: initial !important;
+    height: auto !important;
+    min-height: 130px !important;
     max-height: initial !important;
     z-index: 0;
 }
