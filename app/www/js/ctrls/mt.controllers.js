@@ -8,32 +8,30 @@ ctrls.controller('AppCtrl', function ($scope, $rootScope, $ionicModal, $timeout,
     };
     // Form data for the login modal
     $scope.loginData = {};
-
     // Create the login modal that we will use later
     $ionicModal.fromTemplateUrl('views/screens/login.html', {
         scope: $scope
     }).then(function (modal) {
         $scope.modal = modal;
     });
-
+    $rootScope.mostraZero = function (v) {
+        if (v < 10) return "0" + v.toString();
+        else return v;
+    };
     // Triggered in the login modal to close it
     $scope.closeLogin = function () {
         $scope.modal.hide();
     };
-
     // Open the login modal
     $scope.login = function () {
         $scope.modal.show();
     };
-
     $rootScope.$on("add-cd-to-playlist", function (event, musica) {
         $scope.showPlayer = $scope.nowPlaying = true;
     });
-
     $rootScope.$on("add-to-playlist", function (event, musica) {
         $scope.showPlayer = $scope.nowPlaying = true;
     });
-
     $scope.$on('$ionicView.enter', function (event) {
         if ($scope.nowPlaying) {
             setTimeout(function () {
@@ -42,7 +40,6 @@ ctrls.controller('AppCtrl', function ($scope, $rootScope, $ionicModal, $timeout,
             }, 100);
         }
     });
-
     // Perform the login action when the user submits the login form
     $scope.doLogin = function () {
         console.log('Doing login', $scope.loginData);

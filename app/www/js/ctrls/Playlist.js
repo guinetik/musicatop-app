@@ -2,13 +2,13 @@
  * Created by guinetik on 2/20/15.
  */
 angular.module('mt.controllers').controller('Playlist', Playlist);
-function Playlist($scope, $rootScope, $timeout, $state) {
+function Playlist($scope, $rootScope, $timeout, $state, toastr) {
     $scope.$on('$ionicView.beforeEnter', function (event) {
         $scope.dataLoaded = false;
         $timeout($scope.updateList);
     });
     $scope.updateList = function () {
-        if($rootScope.playlist.length == 0) {
+        if ($rootScope.playlist.length == 0) {
             $state.go("app.home");
         } else {
             $scope.dataLoaded = true;
@@ -22,9 +22,11 @@ function Playlist($scope, $rootScope, $timeout, $state) {
         $state.go("app.home");
         $rootScope.playlist = [];
     };
-    $scope.shufflePlaylist = function() {
+    $scope.shufflePlaylist = function () {
         $rootScope.playlist = shuffleArray($rootScope.playlist);
-        $rootScope.$emit("add-to-playlist", $rootScope.playlist[0]);
+        $timeout(function () {
+            $scope.mediaPlayer.play(0);
+        });
     };
     function shuffleArray(array) {
         for (var i = array.length - 1; i > 0; i--) {
@@ -35,5 +37,4 @@ function Playlist($scope, $rootScope, $timeout, $state) {
         }
         return array;
     }
-
 }

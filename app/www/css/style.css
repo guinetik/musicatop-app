@@ -222,8 +222,11 @@ img.blur {
 
 .track_number {
     position: static !important;
+    font-family: "pf_square_sans_prolight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding-left: 7px;
+    padding-top: 4px;
     float: left;
-    margin-left: -10px !important;
+    margin-left: -12px !important;
     text-align: center;
     width: 30px;
 }
@@ -425,4 +428,37 @@ img.blur {
 }
 .playlist_title{
     margin-left: 50px!important
+}
+.playlist .item-royal .song_title,
+.playlist .item-royal .icon{
+    color:#ffffff!important;
+}
+
+.progress-bar {
+    height: 5px;
+    background: #e11d70;
+    position: absolute;
+    left: 0;
+    top:-6px;
+    z-index: 1000;
+}
+
+.playlist-controls-progress-slider {
+    border-top: 7px solid #292952;
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    z-index: 10000;
+}
+
+.playlist-controls-time {
+    font-family: "pf_square_sans_proregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    position: absolute;
+    top:30px;
+    right: 10px;
+    color: #404a7d;
+}
+
+.menu_play_item h3 {
+    font-family: "pf_square_sans_probold" !important;
 }

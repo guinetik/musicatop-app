@@ -1,4 +1,7 @@
 <ion-view view-title="MÚSICA TOP">
+    <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </ion-nav-buttons>
     <ion-content>
         <div ng-if="dataLoaded">
             <section class="cd_header">
@@ -37,11 +40,13 @@
                     <a ui-sref="app.perfil({id:cd.artista.id})" class="user ng-binding">{{cd.artista.nome}}</a>
                 </div>
             </section>
-            <ion-list>
+            <ion-list class="playlist">
                 <ion-item class="item-divider item-calm home_header">MÚSICAS</ion-item>
-                <ion-item class="item-icon-right item-stable" ng-click="addToPlaylist(musica)"
-                          ng-repeat="musica in cd.musicas|orderBy:'track'">
-                    <span class="badge badge-calm track_number">{{musica.track}}</span>
+                <ion-item class="item-icon-right"
+                          ng-repeat="musica in cd.musicas|orderBy:'track'"
+                          ng-class="{'item-royal':playlist[mediaPlayer.currentTrack-1].id==musica.id, 'item-stable':playlist[mediaPlayer.currentTrack-1].id!=musica.id}"
+                          ng-click="addToPlaylist(musica)">
+                    <span class="badge badge-calm track_number">{{mostraZero(musica.track)}}</span>
                     <span class="song_title royal">{{musica.nome}}</span>
                     <i class="icon ion-play royal"></i>
                 </ion-item>
