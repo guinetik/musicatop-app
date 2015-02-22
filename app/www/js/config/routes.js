@@ -89,6 +89,14 @@ angular.module("mt").config(function ($stateProvider, $urlRouterProvider) {
                     controller: 'Perfil'
                 }
             }
+        }).state('app.playlist', {
+            url: "/playlist",
+            views: {
+                'menuContent': {
+                    templateUrl: "views/screens/playlist.html",
+                    controller: 'Playlist'
+                }
+            }
         });
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/home');

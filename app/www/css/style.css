@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: "pf_square_sans_probold";
     src: url("fonts/pfsquaresanspro-bold-webfont.eot");
@@ -37,18 +36,19 @@
     padding-top: 12px;
     min-height: 60px;
 }
-.menu_play_item h3{
+
+.menu_play_item h3 {
     font-family: "pf_square_sans_proregular";
 }
 
-.menu_play_item p{
+.menu_play_item p {
     font-family: "pf_square_sans_proregular";
     font-size: 16px;
 }
 
 .header-item {
     font-family: "pf_square_sans_proextra_black";
-    font-size: 18px!important;
+    font-size: 18px !important;
 
 }
 
@@ -58,8 +58,10 @@
 }
 
 .main_menu_play_button {
-    margin-left: 30%;
-    margin-right: 30%;
+    position: absolute;
+    left: 50%;
+    margin-left: -15px;
+    font-size: 28px;
 }
 
 .main_footer {
@@ -71,9 +73,9 @@
 }
 
 .menu_play_image {
-    left: 5px!important;
-    top: 10px!important;
-    border-radius: 5px!important;
+    left: 5px !important;
+    top: 10px !important;
+    border-radius: 5px !important;
 }
 
 .slider {
@@ -86,15 +88,18 @@
 }
 
 .slider .slider-pager .icon {
-    color:white;
+    color: white;
 }
+
 .home_slide {
     min-height: 100%;
 }
+
 .home_slide img {
     width: 100%;
     min-height: 200px;
 }
+
 .playlist-plug span {
     width: 16px;
     height: 16px;
@@ -106,9 +111,11 @@
     background-repeat: no-repeat;
     display: inline-block;
 }
+
 .playlist-plug:active {
     background: white;
 }
+
 .playlist-plug {
     display: block;
     position: absolute;
@@ -126,6 +133,7 @@
     border-radius: 4px 4px 0 0;
     text-indent: -9999em;
 }
+
 .home_header {
     text-transform: uppercase;
     color: #404a7d;
@@ -134,41 +142,52 @@
     letter-spacing: -0.08em;
     line-height: 26px;
 }
+
 .menu_item {
     font-family: "pf_square_sans_probold", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
 }
-.menu_active .item-content{
-    border-color: #2f365b!important;
-    background-color: #f8f8f8!important;
-    color: #e11d70!important;
+
+.menu_active .item-content {
+    border-color: #2f365b !important;
+    background-color: #f8f8f8 !important;
+    color: #e11d70 !important;
 }
+
 .playlist-plug.closed span {
     background-position: -431px -82px;
 }
-img.blur {-webkit-filter: blur(10px); filter: blur(10px); }
+
+img.blur {
+    -webkit-filter: blur(10px);
+    filter: blur(10px);
+}
+
 .cd_cover_bg {
     position: relative;
     width: 120%;
     left: -5%;
-    top:-10px;
+    top: -10px;
     overflow: hidden;
     z-index: 0;
     display: block;
     min-height: 400px;
 }
+
 .cd_cover {
     width: 200px;
     position: absolute;
     left: 50%;
     margin-left: -100px;
 }
+
 .cd_header {
     width: 100%;
     height: 350px;
     overflow: hidden;
     display: block;
 }
+
 .cd_info_box {
     position: absolute;
     left: 0;
@@ -177,57 +196,67 @@ img.blur {-webkit-filter: blur(10px); filter: blur(10px); }
     z-index: 0;
     display: block;
 }
+
 .cd_name {
     width: 100%;
     color: white;
     text-align: center;
     font-size: 32px;
+    margin-top: 2% !important;
     font-family: "pf_square_sans_prolight", "Helvetica Neue", Helvetica, Arial, sans-serif;
     letter-spacing: -0.05em;
     text-shadow: 2px 2px 5px #000000;
     text-transform: uppercase;
 }
+
 .cd_description {
     font-family: "pf_square_sans_prolight", "Helvetica Neue", Helvetica, Arial, sans-serif;
     padding: 10px;
     border-bottom: 1px solid #CCCCCC;
 }
+
 .song_title {
     font-family: "pf_square_sans_probold";
     margin-left: 10px;
 }
+
 .track_number {
-    position: static!important;
+    position: static !important;
     float: left;
-    margin-left: -10px!important;
+    margin-left: -10px !important;
     text-align: center;
     width: 30px;
 }
+
 .cd_header .dados dl dt {
     display: block;
     text-transform: uppercase;
     font: normal 11px "pf_square_sans_proregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: white;
 }
+
 .cd_header .dados dl dd {
     font: normal 13px "pf_square_sans_probold", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #e11d70;
     text-align: center;
 }
+
 .cd_header .dados {
     width: 100%;
     height: 50px;
     position: absolute;
     z-index: 10000;
-    top:300px;
+    top: 300px;
     padding-top: 12px;
     padding-left: 10px;
-    background: rgba(1,1,1,0.6);
+    background: rgba(1, 1, 1, 0.6);
     overflow: hidden;
 }
+
 .dados dl:first-child {
     margin-left: 0;
 }
+
 .dados dl {
     float: left;
     margin-left: 40px;
@@ -241,6 +270,7 @@ img.blur {-webkit-filter: blur(10px); filter: blur(10px); }
     position: relative;
     width: 100%;
 }
+
 .list-sticky .item-divider {
     bottom: auto;
     left: 0;
@@ -255,23 +285,26 @@ img.blur {-webkit-filter: blur(10px); filter: blur(10px); }
 .item-divider.item-hidden {
     visibility: hidden;
 }
+
 .item-container.item-animated .item-divider {
     bottom: 0;
     top: auto;
 }
+
 .cd-user {
     position: absolute;
     top: 260px;
     right: 0;
     z-index: 10000;
     background: rgba(0, 0, 0, 0.5);
-    width: auto;
+    min-width: 120px;
     height: 34px;
     border-radius: 16px;
     padding-right: 10px;
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
 }
+
 .cd-user .avatar {
     width: 34px;
     height: 34px;
@@ -285,6 +318,7 @@ img.blur {-webkit-filter: blur(10px); filter: blur(10px); }
     border-radius: 100%;
     border: 2px solid #ebeeef;
 }
+
 .cd-user small {
     padding-top: 2px;
     display: inline-block;
@@ -294,6 +328,7 @@ img.blur {-webkit-filter: blur(10px); filter: blur(10px); }
     color: #FFFFFF;
     text-shadow: 1px 1px 5px #000000;
 }
+
 .cd-user .user {
     text-shadow: 1px 1px 5px #000000;
     font-size: 14px;
@@ -368,4 +403,26 @@ img.blur {-webkit-filter: blur(10px); filter: blur(10px); }
     font-size: 12px;
     background: rgba(255, 255, 255, 0.7);
     font-family: "pf_square_sans_proregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.player_next_button {
+    position: absolute;
+    right: 5%;
+    font-size: 28px;
+}
+
+.player_prev_button {
+    font-size: 28px;
+    margin-left: 5%;
+}
+
+.playlist_capa {
+    border-radius: 2px;
+    width: 32px;
+    position: absolute;
+    margin-left: 10px;
+    top: 10px;
+}
+.playlist_title{
+    margin-left: 50px!important
 }

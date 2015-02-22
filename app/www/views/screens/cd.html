@@ -7,14 +7,16 @@
 
                 <div class="cd_info_box">
                     <h3 class="cd_name">{{cd.titulo}}</h3>
-                    <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{cd.capa}}"
-                         class="cd_cover"/>
+                    <a ng-click="addCdToPlaylist()">
+                        <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{cd.capa}}"
+                             class="cd_cover"/>
+                    </a>
                 </div>
                 <div class="dados">
-                    <div style="width: 320px;position:relative;left:50%;margin-left: -160px">
+                    <div style="width: 260px;position:relative;left:50%;margin-left: -130px">
                         <dl>
-                            <dt>Tamanho do CD</dt>
-                            <dd>{{cd.size}}MB</dd>
+                            <dt>MÚSICAS</dt>
+                            <dd>{{cd.musicas.length}}</dd>
                         </dl>
                         <dl>
                             <dt>Data de Envio</dt>

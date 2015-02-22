@@ -1,20 +1,31 @@
-<ion-footer class="calm-bg button-block main_footer" ng-if="nowPlaying">
-    <a href="javascript:void(0)" class="playlist-plug" title="Esconder Playlist" ng-click="togglePlayer()"><span
-            class="icon"></span>Esconder</a>
-    <div id="playlist" class="visible">
-        <a class="item item-avatar menu_play_item" href="#">
-            <img src="http://musicatop.jelastic.websolute.net.br/public/img/a7e732ce-3a0b-4c6c-b7fd-2a243e105090.jpg"
+<ion-footer class="calm-bg button-block main_footer"
+            ng-controller="PlayerCtrl">
+    <div ng-if="nowPlaying">
+        <a href="javascript:void(0)"
+           class="playlist-plug"
+           title="Esconder Playlist"
+           ng-click="togglePlayer()"><span class="icon"></span>Esconder</a>
+    <div id="playlist"
+         class="visible">
+        <a class="item item-avatar menu_play_item"
+           ui-sref="app.playlist">
+            <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{playlist[mediaPlayer.currentTrack-1].cd.capa}}"
                  class="menu_play_image">
 
-            <h3 style="margin-bottom: 0">General Midi</h3>
+            <h3 class="royal"
+                style="margin-bottom: 0">{{playlist[mediaPlayer.currentTrack-1].title}}</h3>
 
             <p>
-                <small>When i Rock (Original Mix)</small>
+                <small>{{playlist[mediaPlayer.currentTrack-1].cd.artista.nome}} - {{playlist[mediaPlayer.currentTrack-1].cd.titulo}}</small>
             </p>
         </a>
-        <button class="button button-icon button-clear button-large button-light ion-skip-backward"
-                style="margin-left: 5%"></button>
-        <button class="button button-icon button-clear button-large ion-play button-light main_menu_play_button"></button>
-        <button class="button button-icon button-clear button-large button-light ion-skip-forward"></button>
+        <button ng-click="mediaPlayer.prev()"
+                class="button button-icon button-clear button-large button-light ion-skip-backward player_prev_button"></button>
+        <button ng-click="mediaPlayer.playPause()"
+                ng-class="{'ion-play':!mediaPlayer.playing, 'ion-pause':mediaPlayer.playing}"
+                class="button button-icon button-clear button-large button-light main_menu_play_button"></button>
+        <button ng-click="next(mediaPlayer.currentTrack)"
+                class="button button-icon button-clear button-large button-light ion-skip-forward player_next_button"></button>
+    </div>
     </div>
 </ion-footer>

@@ -22,9 +22,17 @@ angular.module("mt")
     })
     .config(function (blockUIConfig) {
         blockUIConfig.autoBlock = false;
-        blockUIConfig.resetOnException = false;
+        blockUIConfig.resetOnException = true;
         blockUIConfig.message = 'Carregando';
-        blockUIConfig.delay = 10;
+        blockUIConfig.delay = 10 ;
+        blockUIConfig.requestFilter = function(config) {
+            if(config.url.indexOf("mp3") > 0) {
+                console.log("iffff");
+                return false; // ... don't block it.
+            } else {
+                console.log("fowkfokwoef");
+            }
+        };
     })
     .config(function ($ionicConfigProvider) {
     $ionicConfigProvider.backButton.text('').icon('ion-ios7-arrow-left');

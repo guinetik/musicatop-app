@@ -7,7 +7,7 @@
  * # Api
  * Service in the musicaApp.
  */
-angular.module('mt').service('api', ['ws', 'API_URL', 'blockUI', api]);
+angular.module('mt').service('api', ['ws', 'API_URL', api]);
 function api(ws, API_URL, blockUI) {
     var api = this;
     api.getEstados = function (cb) {

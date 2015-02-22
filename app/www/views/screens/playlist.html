@@ -1,0 +1,49 @@
+<ion-view view-title="PLAYLIST">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-shuffle"
+                ng-click="shufflePlaylist()"></button>
+         </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-trash-a"
+                ng-click="clearPlaylist()"></button>
+    </ion-nav-buttons>
+    <ion-content scroll="true">
+        <div ng-if="dataLoaded">
+            <section class="cd_header"
+                     style="height:300px">
+                <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{playlist[mediaPlayer.currentTrack-1].cd.capa}}"
+                     class="cd_cover_bg blur"/>
+                <div class="cd_info_box">
+                    <h3 class="cd_name">{{playlist[mediaPlayer.currentTrack-1].cd.artista.nome}} - {{playlist[mediaPlayer.currentTrack-1].title}}</h3>
+                    <h3 class="cd_name">{{cd.titulo}}</h3>
+                    <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{playlist[mediaPlayer.currentTrack-1].cd.capa}}"
+                             class="cd_cover"/>
+                </div>
+                <div class="cd-user"
+                     style="top: 250px">
+                    <span class="avatar">
+                        <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{playlist[mediaPlayer.currentTrack-1].cd.artista.foto}}"
+                             style="width: 34px;height:34px">
+                    </span>
+                    <small>por:</small>
+                    <a ui-sref="app.perfil({id:cd.artista.id})"
+                       class="user ng-binding">{{playlist[mediaPlayer.currentTrack-1].cd.artista.nome}}</a>
+                </div>
+            </section>
+            <section ng-if="playlist.length>0"
+                     style="width: 240px;position: absolute;left: 50%;margin-left: -120px;z-index: 100;top:60px">
+            </section>
+            <ion-list id="#playlist">
+                <ion-item class="item-icon-right item-stable"
+                          ng-click="addToPlaylist(musica)"
+                          ng-repeat="musica in playlist">
+                    <span class="badge badge-calm track_number">{{$index+1}}</span>
+                    <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{musica.cd.capa}}"
+                         class="playlist_capa"/>
+                    <span class="song_title royal playlist_title">{{musica.cd.artista.nome}} - {{musica.title}}</span>
+                    <i class="icon ion-play royal"></i>
+                </ion-item>
+            </ion-list>
+        </div>
+    </ion-content>
+</ion-view>

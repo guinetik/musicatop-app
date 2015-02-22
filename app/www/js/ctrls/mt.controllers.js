@@ -2,6 +2,7 @@ var ctrls = angular.module('mt.controllers', []);
 ctrls.controller('AppCtrl', function ($scope, $rootScope, $ionicModal, $timeout, $ionicSideMenuDelegate) {
     $scope.showPlayer = true;
     $scope.nowPlaying = false;
+    $rootScope.playlist = [];
     $scope.isMenuOpened = function () {
         return $ionicSideMenuDelegate.isOpen()
     };
@@ -25,8 +26,11 @@ ctrls.controller('AppCtrl', function ($scope, $rootScope, $ionicModal, $timeout,
         $scope.modal.show();
     };
 
+    $rootScope.$on("add-cd-to-playlist", function (event, musica) {
+        $scope.showPlayer = $scope.nowPlaying = true;
+    });
+
     $rootScope.$on("add-to-playlist", function (event, musica) {
-        console.log("musica", musica);
         $scope.showPlayer = $scope.nowPlaying = true;
     });
 
