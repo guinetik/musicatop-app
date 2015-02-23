@@ -1,7 +1,4 @@
 <ion-view view-title="MÚSICA TOP">
-    <ion-nav-buttons side="left">
-                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
-            </ion-nav-buttons>
     <ion-content>
         <div ng-if="dataLoaded">
             <section class="cd_header">
@@ -37,7 +34,8 @@
                                  style="width: 34px;height:34px">
                         </span>
                     <small>por:</small>
-                    <a ui-sref="app.perfil({id:cd.artista.id})" class="user ng-binding">{{cd.artista.nome}}</a>
+                    <a ui-sref="app.perfil({id:cd.artista.id})"
+                       class="user ng-binding">{{cd.artista.nome}}</a>
                 </div>
             </section>
             <ion-list class="playlist">
