@@ -1,5 +1,7 @@
 angular.module('mt', [
     'ionic',
+    'ngSanitize',
+    'com.2fdevs.videogular',
     'mt.controllers',
     'toastr',
     'blockUI',

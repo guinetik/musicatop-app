@@ -7,8 +7,8 @@
  * # PlayerCtrl
  * Controller of the musicaApp
  */
-angular.module('mt').controller('PlayerCtrl', ['$scope', '$rootScope', '$timeout', '$filter', 'API_URL', PlayerCtrl]);
-function PlayerCtrl($scope, $rootScope, $timeout, $filter, API_URL) {
+angular.module('mt').controller('PlayerCtrl', ['$scope', '$rootScope', '$timeout', '$filter', 'API_URL', '$sce', PlayerCtrl]);
+function PlayerCtrl($scope, $rootScope, $timeout, $filter, API_URL, $sce) {
     $scope.playload = false;
     $scope.hasBeenAddedToPlaylist = function (id) {
         var r = false;
@@ -45,6 +45,7 @@ function PlayerCtrl($scope, $rootScope, $timeout, $filter, API_URL) {
                     title: song.nome,
                     id: song.id,
                     cd: cd,
+                    //src: $sce.trustAsResourceUrl(API_URL + 'public/music/' + song.filename),
                     src: API_URL + 'public/music/' + song.filename,
                     type: 'audio/mp3',
                     mimeType: 'image/png'
@@ -68,9 +69,9 @@ function PlayerCtrl($scope, $rootScope, $timeout, $filter, API_URL) {
                     id: music.id,
                     title: music.nome,
                     cd: music.cd,
+                    //src: $sce.trustAsResourceUrl(API_URL + 'public/music/' + song.filename),
                     src: API_URL + 'public/music/' + music.filename,
-                    type: 'audio/mp3',
-                    mimeType: 'image/png'
+                    type: 'audio/mp3'
                 }
             );
             functions.playlist.show();

@@ -8,7 +8,8 @@
     "angular-toastr": "~1.0.1",
     "angular-block-ui": "latest",
     "angular-moment": "~0.9.0",
-    "angular-media-player":"latest",
-    "angular-img-fallback": "~0.0.2"
+    "angular-media-player": "latest",
+    "angular-img-fallback": "~0.0.2",
+    "videogular": "~1.0.1"
   }
 }

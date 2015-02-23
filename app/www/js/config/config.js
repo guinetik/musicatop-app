@@ -24,9 +24,10 @@ angular.module("mt")
         blockUIConfig.autoBlock = false;
         blockUIConfig.resetOnException = true;
         blockUIConfig.message = 'Carregando';
-        blockUIConfig.delay = 10 ;
-        blockUIConfig.requestFilter = function(config) {
-            if(config.url.indexOf("mp3") > 0) {
+        blockUIConfig.delay = 10;
+        blockUIConfig.template = '<div class=\"block-ui-overlay\"></div><div class=\"block-ui-message-container\" aria-live=\"assertive\" aria-atomic=\"true\"><div class=\"block-ui-message\" ng-class=\"$_blockUiMessageClass\"><i class="icon ion-load-c spin"></i> {{ state.message }}</div></div>';
+        blockUIConfig.requestFilter = function (config) {
+            if (config.url.indexOf("mp3") > 0) {
                 console.log("iffff");
                 return false; // ... don't block it.
             } else {
@@ -35,6 +36,6 @@ angular.module("mt")
         };
     })
     .config(function ($ionicConfigProvider) {
-    $ionicConfigProvider.backButton.text('').icon('ion-ios7-arrow-left');
-    $ionicConfigProvider.backButton.previousTitleText(false);
-});
+        $ionicConfigProvider.backButton.text('').icon('ion-ios7-arrow-left');
+        $ionicConfigProvider.backButton.previousTitleText(false);
+    });

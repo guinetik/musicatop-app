@@ -2,8 +2,8 @@
 /**
  * Created by guinetik on 10/30/14.
  */
-angular.module('mt').service('ws', ['$rootScope', '$http', 'API_URL', 'blockUI', ws]);
-function ws($rootScope, $http, API_URL, blockUI) {
+angular.module('mt').service('ws', ['$rootScope', '$http', 'API_URL', 'blockUI', '$timeout', ws]);
+function ws($rootScope, $http, API_URL, blockUI, $timeout) {
     var ws = this;
     var m = "POST";
     ws.baseURL = API_URL;
@@ -32,7 +32,7 @@ function ws($rootScope, $http, API_URL, blockUI) {
             data: params,
             headers: headers
         }).success(function (result, status, headers, config) {
-            blockUI.stop();
+            $timeout(blockUI.stop, 500);
             //console.log("data", result, status, headers, config);
             result.status = status;
             if (status == 200) {

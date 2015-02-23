@@ -1,8 +1,53 @@
 <ion-view view-title="PERFIL">
     <ion-nav-buttons side="left">
-                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+                <button class="button button-icon button-clear ion-navicon"
+                        menu-toggle="left"></button>
             </ion-nav-buttons>
-  <ion-content>
+  <ion-content class="calm-bg">
+    <header class="profile-header">
+      <figure class="profile-cover">
+        <img src="http://placehold.it/1000x368"
+             ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{perfil.usuario.capa}}">
+      </figure>
+      <div class="profile-dados clearfix">
+        <figure class="avatar">
+          <img src="http://placehold.it/124x124"
+               style="width: 116px;height: 116px;"
+               ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{perfil.usuario.foto}}">
+        </figure>
+        <div class="info">
+          <h1 class="name">{{perfil.usuario.nome}}</h1>
+          <p class="desc">{{perfil.usuario.cidade.nome}}wefwefwef</p>
+        </div>
+        <div class="redes">
+          <ul>
+              <li><a ng-href="{{'http://instagram.com/' + perfil.usuario.instagram}}"
+                     target="_blank"
+                     title="Instagram"
+                     class="instagram">Instagram</a></li>
+              <li><a ng-href="{{'http://twitter.com/' + perfil.usuario.twitter}}"
+                     target="_blank"
+                     title="Twitter"
+                     class="twitter">Twitter</a></li>
+              <li><a ng-href="{{'http://facebook.com/' + perfil.usuario.facebook}}"
+                     target="_blank"
+                     title="Facebook"
+                     class="facebook">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+      <ion-list>
+                <ion-item class="item-divider item-calm home_header">CDs</ion-item>
+                <ion-item class="item-thumbnail-left cd_item"
+                          ng-repeat="cd in perfil.cds"
+                          ui-sref="app.cd({id:cd.id})">
+                    <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{cd.capa}}">
 
+                    <h2>{{cd.titulo}}</h2>
+
+                    <p><span class="cd_downloads">{{cd.downloads}} Downloads</span><br/>Enviado há: <span am-time-ago="cd.createdAt"></span></p>
+                </ion-item>
+          </ion-list>
   </ion-content>
 </ion-view>

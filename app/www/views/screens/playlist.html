@@ -32,9 +32,6 @@
                        class="user ng-binding">{{playlist[mediaPlayer.currentTrack-1].cd.artista.nome}}</a>
                 </div>
             </section>
-            <section ng-if="playlist.length>0"
-                     style="width: 240px;position: absolute;left: 50%;margin-left: -120px;z-index: 100;top:60px">
-            </section>
             <ion-list class="playlist">
                 <ion-item class="item-icon-right item-stable"
                           ng-click="addToPlaylist(musica)"

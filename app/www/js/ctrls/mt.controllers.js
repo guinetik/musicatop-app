@@ -40,6 +40,9 @@ ctrls.controller('AppCtrl', function ($scope, $rootScope, $ionicModal, $timeout,
             }, 100);
         }
     });
+    $scope.onPlayerReady = function(API) {
+      $rootScope.mediaPlayer = API;
+    };
     // Perform the login action when the user submits the login form
     $scope.doLogin = function () {
         console.log('Doing login', $scope.loginData);
