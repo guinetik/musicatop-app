@@ -7,6 +7,7 @@ angular.module('mt', [
     'blockUI',
     'angularMoment',
     'truncate',
+    'uiGmapgoogle-maps',
     'dcbImgFallback',
     'mediaPlayer'
 ]);

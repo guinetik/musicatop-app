@@ -21,6 +21,13 @@ angular.module("mt")
             timeOut: 1000
         });
     })
+    .config(function (uiGmapGoogleMapApiProvider) {
+        uiGmapGoogleMapApiProvider.configure({
+            //    key: 'your api key',
+            v: '3.17',
+            libraries: ''
+        });
+    })
     .config(function (blockUIConfig) {
         blockUIConfig.autoBlock = false;
         blockUIConfig.resetOnException = true;

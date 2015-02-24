@@ -11,7 +11,6 @@ function Cds($scope, $timeout, api) {
     $scope.updateCDs = function () {
         api.getCDs(function (result) {
             if (result.status == 200) {
-
                 $scope.dataLoaded = true;
                 var cds = {};
                 angular.forEach(result, function (cd, key) {
