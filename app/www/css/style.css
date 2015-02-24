@@ -256,14 +256,22 @@ img.blur {
     background: rgba(1, 1, 1, 0.6);
     overflow: hidden;
 }
-
+.cd_upload_date
+{
+    position: absolute;
+    display: block;
+    left: 50%;
+    margin-left: -37px;
+}
 .dados dl:first-child {
     margin-left: 0;
 }
-
+.dados dl:last-child {
+    float:right;
+    margin-right: 12px;
+}
 .dados dl {
     float: left;
-    margin-left: 40px;
 }
 
 .item-container {
@@ -416,6 +424,9 @@ img.blur {
     margin-top: -5px;
 }
 
+.hidden {
+    display: none;
+}
 .player_prev_button {
     margin-top: -5px;
     font-size: 28px;
@@ -662,5 +673,8 @@ img.blur {
     color:#ffffff!important;
 }
 #item-search-music .item-royal .search_music_author{
+    color:#ffffff!important;
+}
+#item-search-music .item-royal .ion-play{
     color:#ffffff!important;
 }

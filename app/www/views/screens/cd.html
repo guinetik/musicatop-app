@@ -1,6 +1,6 @@
 <ion-view view-title="CD">
     <ion-content>
-        <div ng-if="dataLoaded" style="height: ;">
+        <div ng-if="dataLoaded">
             <section class="cd_header">
                 <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{cd.capa}}"
                      class="cd_cover_bg blur"/>
@@ -12,12 +12,12 @@
                     </a>
                 </div>
                 <div class="dados">
-                    <div style="width: 260px;position:relative;left:50%;margin-left: -130px">
+                    <div style="width: 320px;position:relative;left:50%;margin-left: -160px">
                         <dl>
-                            <dt>MÚSICAS</dt>
-                            <dd>{{cd.musicas.length}}</dd>
+                            <dt>GÊNERO</dt>
+                            <dd>{{cd.genero.nome|uppercase}}</dd>
                         </dl>
-                        <dl>
+                        <dl class="cd_upload_date">
                             <dt>Data de Envio</dt>
                             <dd>{{cd.createdAt|date : "dd/MM/yyyy"}}</dd>
                         </dl>
