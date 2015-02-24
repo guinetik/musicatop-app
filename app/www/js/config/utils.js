@@ -14,7 +14,7 @@ functions = {
             }
         },
         show: function () {
-            $('#playlist').animate({'height': '110px', 'border-top': 0});
+            $('#playlist').animate({'height': '125px', 'border-top': 0});
             $('.playlist-plug').attr('title', 'Esconder Playlist');
             $('#playlist').addClass('visible')
         },

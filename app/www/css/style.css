@@ -454,29 +454,32 @@
 }
 
 .progress-bar {
-    height: 5px;
+    height: 16px;
     background: #e11d70;
     position: absolute;
     left: 0;
-    top: -6px;
+    top: -17px;
     z-index: 1000;
 }
 
 .playlist-controls-progress-slider {
-    border-top: 7px solid #292952;
+    border-top: 18px solid #292952;
     width: 100%;
     top: 52px;
-    height: 20px;
+    height: 30px;
     position: absolute;
     z-index: 10000;
 }
 
 .playlist-controls-time {
     font-family: "pf_square_sans_proregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
     position: absolute;
-    top: 30px;
-    right: 10px;
-    color: #404a7d;
+    top: 51px;
+    right: 5px;
+    color: #ffffff;
+    z-index: 10000;
 }
 
 .menu_play_item h3 {

@@ -10,12 +10,13 @@
             <section class="cd_header"
                      style="height:300px">
                 <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{playlist[mediaPlayer.currentTrack-1].cd.capa}}"
-                     class="cd_cover_bg blur"/>
+                     class="cd_cover_bg blur"
+                     style="height: 330px!important;"/>
                 <div class="cd_info_box">
                     <h3 class="cd_name">{{playlist[mediaPlayer.currentTrack-1].title}}</h3>
                     <h3 class="cd_name">{{cd.titulo}}</h3>
-                    <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{playlist[mediaPlayer.currentTrack-1].cd.capa}}"
-                         class="cd_cover"/>
+                    <a ui-sref="app.cd({id:playlist[mediaPlayer.currentTrack-1].cd.id})"><img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{playlist[mediaPlayer.currentTrack-1].cd.capa}}"
+                                                                                              class="cd_cover"/></a>
                 </div>
                 <div class="cd-user"
                      style="top: 250px">
@@ -36,7 +37,7 @@
                     <span class="badge badge-calm track_number">{{mostraZero($index+1)}}</span>
                     <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{musica.cd.capa}}"
                          class="playlist_capa"/>
-                    <span class="song_title royal playlist_title">{{musica.cd.artista.nome}} - {{musica.title}}</span>
+                    <span class="song_title royal playlist_title">{{musica.title}}</span>
                     <i class="icon ion-play royal"></i>
                 </ion-item>
             </ion-list>

@@ -6,6 +6,7 @@
            title="Esconder Playlist"
            ng-click="togglePlayer()"><span class="icon"></span>Esconder</a>
     <div id="playlist"
+         style="height: 125px;"
          class="visible">
         <a class="item item-avatar menu_play_item"
            ui-sref="app.playlist"
@@ -15,9 +16,8 @@
             <h3 class="royal"
                 style="margin-bottom: 0">{{playlist[mediaPlayer.currentTrack-1].title}}</h3>
             <p>
-                <small>{{playlist[mediaPlayer.currentTrack-1].cd.artista.nome}} - {{playlist[mediaPlayer.currentTrack-1].cd.titulo}}</small>
+                <small>{{playlist[mediaPlayer.currentTrack-1].cd.titulo}}</small>
             </p>
-            <span class="playlist-controls-time">{{mediaPlayer.formatTime}}/{{mediaPlayer.formatDuration}}</span>
         </a>
         <div class="playlist-controls-progress-slider"
              ng-click="mediaPlayer.seek(mediaPlayer.duration * seekPercentage($event))">
@@ -25,13 +25,16 @@
                  ng-style="{ width: mediaPlayer.currentTime*100/mediaPlayer.duration + '%' }">
             </div>
         </div>
-        <button ng-click="mediaPlayer.prev()"
-                class="button button-icon button-clear button-large button-light ion-skip-backward player_prev_button"></button>
+        <span class="playlist-controls-time">{{mediaPlayer.formatTime}}/{{mediaPlayer.formatDuration}}</span>
+        <div style="margin-top: 20px">
+            <button ng-click="mediaPlayer.prev()"
+                    class="button button-icon button-clear button-large button-light ion-skip-backward player_prev_button"></button>
         <button ng-click="mediaPlayer.playPause()"
                 ng-class="{'ion-play':!mediaPlayer.playing, 'ion-pause':mediaPlayer.playing}"
                 class="button button-icon button-clear button-large button-light main_menu_play_button"></button>
         <button ng-click="mediaPlayer.next()"
                 class="button button-icon button-clear button-large button-light ion-skip-forward player_next_button"></button>
+        </div>
     </div>
     </div>
 </ion-footer>
