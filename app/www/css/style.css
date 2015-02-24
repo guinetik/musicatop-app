@@ -159,20 +159,19 @@
     background-position: -431px -82px;
 }
 
-img.blur {
+.blur {
     -webkit-filter: blur(10px);
     filter: blur(10px);
 }
 
 .cd_cover_bg {
-    position: relative;
-    width: 120%;
-    left: -5%;
-    top: -10px;
-    overflow: hidden;
+    position: absolute;
+    width: 110% !important;
+    left: -5% !important;
+    top: -5% !important;
     z-index: 0;
     display: block;
-    min-height: 400px;
+    height: 400px !important;
 }
 
 .cd_cover {
@@ -536,6 +535,7 @@ img.blur {
     top: 0;
     background-repeat: no-repeat !important;
     background-size: cover !important;
+    background-position: center center !important;
     height: 305px;
     z-index: -1;
     position: absolute;
@@ -544,7 +544,7 @@ img.blur {
 .profile-header {
     position: relative;
     top: 100px;
-    height: 300px;
+    height: 305px;
 }
 
 .profile-header .profile-dados {

@@ -2,8 +2,9 @@
     <ion-content>
         <div ng-if="dataLoaded">
             <section class="cd_header">
-                <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{cd.capa}}"
-                     class="cd_cover_bg blur"/>
+                <figure class="profile-cover blur cd_cover_bg"
+                        ng-style="{background:'url(http://musicatop.jelastic.websolute.net.br/public/img/{{cd.capa}})'}">
+            </figure>
                 <div class="cd_info_box">
                     <h3 class="cd_name">{{cd.titulo}}</h3>
                     <a ng-click="addCdToPlaylist()">
