@@ -1,93 +1,88 @@
 /**
  * Created by guinetik on 2/20/15.
  */
-angular.module("mt").directive('sticky', function ($ionicScrollDelegate) {
-    var options,
-        defaults = {
-            classes: {
-                animated: 'item-animated',
-                container: 'item-wrapper',
-                hidden: 'item-hidden',
-                stationaryHeader: 'item item-divider'
-            },
-            selectors: {
-                groupContainer: 'item-container',
-                groupHeader: 'item-divider',
-                stationaryHeader: 'div'
-            }
-        };
-    return {
-        restrict: 'A',
-        link: function (scope, element, attrs, ctrl) {
+angular.module("mt")
+    .directive('affixWithinContainer', function ($document, $ionicScrollDelegate) {
 
-            var items = [],
-                options = angular.extend(defaults, attrs),
-                $element = angular.element(element),
-                $fakeHeader = angular.element('<div class="' + options.classes.stationaryHeader + '"/>'),
-                $groupContainer = angular.element($element[0].getElementsByClassName(options.selectors.groupContainer));
-
-            $element.addClass('list-sticky');
-
-            angular.element($element[0].getElementsByClassName('list')).addClass(options.classes.container);
-
-            $element.prepend($fakeHeader);
-
-            angular.forEach($groupContainer, function (elem, index) {
-
-                var $tmp_list = $groupContainer.eq(index);
-                $tmp_header = angular.element($tmp_list[0].getElementsByClassName(options.selectors.groupHeader)).eq(0),
-                    $tmp_listHeight = $tmp_list.prop('offsetHeight'),
-                    $tmp_listOffset = $tmp_list[0].getBoundingClientRect().top;
-
-                items.push({
-                    'list': $tmp_list,
-                    'header': $tmp_header,
-                    'listHeight': $tmp_listHeight,
-                    'headerText': $tmp_header.text(),
-                    'headerHeight': $tmp_header.prop('offsetHeight'),
-                    'listOffset': $tmp_listOffset,
-                    'listBottom': $tmp_listHeight + $tmp_listOffset
+        var transition = function (element, dy, executeImmediately) {
+            element.style[ionic.CSS.TRANSFORM] == 'translate3d(0, -' + dy + 'px, 0)' ||
+            executeImmediately ?
+                element.style[ionic.CSS.TRANSFORM] = 'translate3d(0, -' + dy + 'px, 0)' :
+                ionic.requestAnimationFrame(function () {
+                    element.style[ionic.CSS.TRANSFORM] = 'translate3d(0, -' + dy + 'px, 0)';
                 });
-            });
+        };
 
-            $fakeHeader.text(items[0].headerText);
+        return {
+            restrict: 'A',
+            require: '^$ionicScroll',
+            link: function ($scope, $element, $attr, $ionicScroll) {
+                var $affixContainer = $element.closest($attr.affixWithinContainer) || $element.parent();
 
-            scope.checkPosition = function () {
-                var i = 0,
-                    topElement, offscreenElement, topElementBottom,
-                    currentTop = $ionicScrollDelegate.$getByHandle('scrollHandle').getScrollPosition().top;
+                var top = 0;
+                var height = 0;
+                var scrollMin = 0;
+                var scrollMax = 0;
+                var scrollTransition = 0;
+                var affixedHeight = 0;
+                var updateScrollLimits = _.throttle(function (scrollTop) {
+                    top = $affixContainer.offset().top;
+                    height = $affixContainer.outerHeight(false);
+                    affixedHeight = $element.outerHeight(false);
+                    scrollMin = (scrollTop + top) - 43;
+                    scrollMax = scrollMin + height;
+                    scrollTransition = scrollMax - affixedHeight;
+                }, 500, {
+                    trailing: false
+                });
 
-                while ((items[i].listOffset - currentTop) <= 0) {
-                    topElement = items[i];
-                    topElementBottom = -(topElement.listBottom - currentTop);
+                var affix = null;
+                var unaffix = null;
+                var $affixedClone = null;
+                var setupAffix = function () {
+                    unaffix = null;
+                    affix = function () {
+                        $affixedClone = $element.clone().css({
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            right: 0
+                        });
+                        $($ionicScroll.element).append($affixedClone);
 
-                    if (topElementBottom < -topElement.headerHeight) {
-                        offscreenElement = topElement;
-                    }
+                        setupUnaffix();
+                    };
+                };
+                var cleanupAffix = function () {
+                    $affixedClone && $affixedClone.remove();
+                    $affixedClone = null;
+                };
+                var setupUnaffix = function () {
+                    affix = null;
+                    unaffix = function () {
+                        cleanupAffix();
+                        setupAffix();
+                    };
+                };
+                $scope.$on('$destroy', cleanupAffix);
+                setupAffix();
 
-                    i++;
-
-                    if (i >= items.length) {
-                        break;
-                    }
-                }
-
-
-                if (topElement) {
-
-                    if (topElementBottom < 0 && topElementBottom > -topElement.headerHeight) {
-                        $fakeHeader.addClass(options.classes.hidden);
-                        angular.element(topElement.list).addClass(options.classes.animated);
-                    } else {
-                        $fakeHeader.removeClass(options.classes.hidden);
-                        if (topElement) {
-                            angular.element(topElement.list).removeClass(options.classes.animated);
+                var affixedJustNow;
+                var scrollTop;
+                $($ionicScroll.element).on('scroll', function (event) {
+                    scrollTop = (event.detail || event.originalEvent && event.originalEvent.detail).scrollTop;
+                    updateScrollLimits(scrollTop);
+                    if (scrollTop >= scrollMin && scrollTop <= scrollMax) {
+                        affixedJustNow = affix ? affix() || true : false;
+                        if (scrollTop > scrollTransition) {
+                            transition($affixedClone[0], Math.floor(scrollTop - scrollTransition), affixedJustNow);
+                        } else {
+                            transition($affixedClone[0], 0, affixedJustNow);
                         }
+                    } else {
+                        unaffix && unaffix();
                     }
-                    $fakeHeader.text(topElement.headerText);
-                }
+                });
             }
         }
-
-    }
-});
+    });

@@ -92,6 +92,9 @@ function api(ws, API_URL, blockUI) {
     api.getCD = function (id, cb) {
         ws.consumeService("cd/get?id=" + id, null, null, cb, false, "GET");
     };
+    api.getCDs = function (cb) {
+        ws.consumeService("cd", null, null, cb, false, "GET");
+    };
     api.getEvent = function (id, cb) {
         ws.consumeService("eventos/" + id, null, null, cb, false, "GET");
     };
