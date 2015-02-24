@@ -1,0 +1,67 @@
+<ion-view view-title="BUSCAR">
+    <ion-content>
+        <form ng-submit="searchCD(query)"
+              id="search-form"
+              class="ng-pristine ng-valid">
+            <input type="text"
+                   name="q"
+                   id="q"
+                   ng-model="query"
+                   placeholder="busque por cds, músicas ou eventos"
+                   class="search-input ng-pristine ng-valid ng-touched">
+            <button type="submit"
+                    id="search-button"
+                    class="search-button"><span></span>Buscar
+            </button>
+        </form>
+        <ion-list>
+            <div ng-if="musicas.length>0" id="item-search-music">
+                <ion-item class="item-divider item-calm home_header">Músicas</ion-item>
+                <ion-item class="item-icon-right item-stable item-avatar"
+                          ng-click="addToPlaylist(musica)"
+                          style="color:#e11d70!important;"
+                          ng-repeat="musica in musicas"
+                          ng-class="{'item-royal':playlist[mediaPlayer.currentTrack-1].id==musica.id, 'item-stable':playlist[mediaPlayer.currentTrack-1].id!=musica.id}">
+                    <img style="border-radius: 4px" ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{musica.cd.capa}}"/>
+                    <h2 style="white-space: pre-wrap;text-transform: uppercase" class="song_title royal">{{musica.nome|characters:50}}</h2>
+                    <p class="search_music_author">POR: {{musica.cd.artista.nome|uppercase}}</p>
+                    <i class="icon ion-play royal"></i>
+                </ion-item>
+            </div>
+            <div ng-if="cds.length>0">
+                <ion-item class="item-divider item-calm home_header">CDs</ion-item>
+                <ion-item class="item-thumbnail-left cd_item"
+                          ng-repeat="cd in cds"
+                          ui-sref="app.cd({id:cd.id})">
+                    <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{cd.capa}}">
+                    <h2 style="white-space: pre-wrap">{{cd.titulo|uppercase}}</h2>
+                    <p>POR: {{cd.artista.nome|uppercase}}
+                        <br/>
+                        <span class="cd_downloads">{{cd.downloads}} DOWNLOADS</span>
+                        <br/>
+                        <span am-time-ago="cd.createdAt"></span>
+                    </p>
+                </ion-item>
+            </div>
+            <div ng-if="eventos.length>0">
+                <ion-item class="item-divider item-calm home_header">EVENTOS</ion-item>
+                <ion-item class="item-avatar item_evento"
+                          ng-repeat="evento in eventos"
+                          ui-sref="app.event({id:evento.id})">
+                    <div class="event_title">
+                        <h2>{{evento.nome}}</h2>
+                        <p>
+                            <strong class="dates">{{evento.inicio| amCalendar}}</strong>
+                            <br/>
+                            <span class="local">{{evento.local.name}}/ {{evento.cidade.nome}}</span>
+                        </p></div>
+                    <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{evento.foto}}"
+                         class="event_picture">
+                </ion-item>
+            </div>
+        </ion-list>
+        <div class="box-content" ng-if="musicas.length==0 && eventos.length==0 && cds.length == 0">
+            <p class="message-empty">Nenhum Resultado</p>
+        </div>
+    </ion-content>
+</ion-view>

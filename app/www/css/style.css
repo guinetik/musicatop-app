@@ -576,3 +576,91 @@ img.blur {
     top:200px;
     background: rgba(0,0,0,0.5);
 }
+#search-form .search-input {
+    width: 100%;
+    border: 1px solid #cacaca;
+    background: #fcfcfc;
+    color: #bababa;
+    padding-left: 20px;
+    padding-right: 70px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    height: 54px;
+    line-height: 16px;
+    -webkit-box-shadow: inset 1px 1px 0 white;
+    -moz-box-shadow: inset 1px 1px 0 white;
+    box-shadow: inset 1px 1px 0 white;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    font: normal 15px "pf_square_sans_proregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#search-form .search-button {
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    width: 54px;
+    height: 52px;
+    border: 0;
+    background: #f1f1f1;
+    cursor: pointer;
+    display: block;
+    text-indent: -9999em;
+    border-left: 1px solid #cacaca;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #e1e1e1));
+    background-image: -webkit-linear-gradient(#ffffff, #e1e1e1);
+    background-image: -moz-linear-gradient(#ffffff, #e1e1e1);
+    background-image: -o-linear-gradient(#ffffff, #e1e1e1);
+    background-image: linear-gradient(#ffffff, #e1e1e1);
+    -webkit-border-radius: 0 4px 4px 0;
+    -moz-border-radius: 0 4px 4px 0;
+    -ms-border-radius: 0 4px 4px 0;
+    -o-border-radius: 0 4px 4px 0;
+    border-radius: 0 4px 4px 0;
+}
+#search-form .search-button span {
+    width: 24px;
+    height: 24px;
+    background-position: -295px 0;
+    position: absolute;
+    left: 14px;
+    background-image: url(http://musicatop.jelastic.websolute.net.br/app/images/sprite.png);
+    top: 13px;
+}
+.message-empty {
+    padding-top: 40px;
+    background: white;
+    color: #888888;
+    text-align: center;
+    font: normal 16px "pf_square_sans_prolight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+.box-content {
+    border: 5px solid #eeeeee;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    left: 0;
+    right: 0;
+    top:54px;
+    bottom: 0;
+    height: 100px;
+    position: absolute;
+}
+
+.search_music_author {
+    font: normal 10px "pf_square_sans_prolight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+#item-search-music .item-royal h2{
+    color:#ffffff!important;
+}
+#item-search-music .item-royal .search_music_author{
+    color:#ffffff!important;
+}

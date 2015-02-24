@@ -6,6 +6,7 @@ angular.module('mt', [
     'toastr',
     'blockUI',
     'angularMoment',
+    'truncate',
     'dcbImgFallback',
     'mediaPlayer'
 ]);

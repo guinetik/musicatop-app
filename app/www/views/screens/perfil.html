@@ -35,15 +35,13 @@
             </div>
         </header>
         <ion-list>
-            <ion-item class="item-divider item-calm home_header">CDs</ion-item>
+            <ion-item class="item-divider item-calm home_header">COLEÇÃO</ion-item>
             <ion-item class="item-thumbnail-left cd_item"
                       ng-repeat="cd in perfil.cds"
                       ui-sref="app.cd({id:cd.id})">
                 <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{cd.capa}}">
-
-                <h2>{{cd.titulo}}</h2>
-
-                <p><span class="cd_downloads">{{cd.downloads}} Downloads</span><br/>Enviado há: <span am-time-ago="cd.createdAt"></span></p>
+                <h2 style="white-space: pre-wrap">{{cd.titulo|uppercase}}</h2>
+                <p><span class="cd_downloads">{{cd.downloads}} DOWNLOADS</span><br/>Adicionado <span am-time-ago="cd.createdAt"></span></p>
             </ion-item>
         </ion-list>
     </ion-content>

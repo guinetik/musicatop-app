@@ -1,10 +1,9 @@
 <ion-view view-title="CD">
     <ion-content>
-        <div ng-if="dataLoaded">
+        <div ng-if="dataLoaded" style="height: ;">
             <section class="cd_header">
                 <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{cd.capa}}"
                      class="cd_cover_bg blur"/>
-
                 <div class="cd_info_box">
                     <h3 class="cd_name">{{cd.titulo}}</h3>
                     <a ng-click="addCdToPlaylist()">
@@ -29,18 +28,18 @@
                     </div>
                 </div>
                 <div class="cd-user">
+                    <a ui-sref="app.perfil({id:cd.artista.id})" class="user">
                         <span class="avatar">
                             <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{cd.artista.foto}}"
                                  style="width: 34px;height:34px">
                         </span>
-                    <small>por:</small>
-                    <a ui-sref="app.perfil({id:cd.artista.id})"
-                       class="user ng-binding">{{cd.artista.nome}}</a>
+                    <small>por:</small>{{cd.artista.nome}}</a>
                 </div>
             </section>
             <ion-list class="playlist">
                 <ion-item class="item-divider item-calm home_header">MÚSICAS</ion-item>
                 <ion-item class="item-icon-right"
+
                           ng-repeat="musica in cd.musicas|orderBy:'track'"
                           ng-class="{'item-royal':playlist[mediaPlayer.currentTrack-1].id==musica.id, 'item-stable':playlist[mediaPlayer.currentTrack-1].id!=musica.id}"
                           ng-click="addToPlaylist(musica)">

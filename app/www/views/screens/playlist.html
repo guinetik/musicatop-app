@@ -24,7 +24,7 @@
                              style="width: 34px;height:34px">
                     </span>
                     <small>por:</small>
-                    <a ui-sref="app.perfil({id:cd.artista.id})"
+                    <a ui-sref="app.perfil({id:playlist[mediaPlayer.currentTrack-1].cd.artista.id})"
                        class="user ng-binding">{{playlist[mediaPlayer.currentTrack-1].cd.artista.nome}}</a>
                 </div>
             </section>

@@ -1,15 +1,16 @@
 /**
  * Created by guinetik on 2/20/15.
  */
-angular.module("mt").config(function ($stateProvider, $urlRouterProvider) {
-    $stateProvider
-        .state('app', {
+angular.module("mt").config(Routes);
+function Routes($stateProvider, $urlRouterProvider) {
+    var routesConfig = {
+        'app': {
             url: "/app",
             abstract: true,
             templateUrl: "views/screens/menu.html",
             controller: 'AppCtrl'
-        })
-        .state('app.home', {
+        },
+        'app.home': {
             url: "/home",
             views: {
                 'menuContent': {
@@ -17,8 +18,8 @@ angular.module("mt").config(function ($stateProvider, $urlRouterProvider) {
                     controller: 'Home'
                 }
             }
-        })
-        .state('app.discover', {
+        },
+        'app.discover': {
             url: "/discover",
             views: {
                 'menuContent': {
@@ -26,8 +27,8 @@ angular.module("mt").config(function ($stateProvider, $urlRouterProvider) {
                     templateUrl: "views/screens/discover.html"
                 }
             }
-        })
-        .state('app.artists', {
+        },
+        'app.artists': {
             url: "/artists",
             views: {
                 'menuContent': {
@@ -35,8 +36,8 @@ angular.module("mt").config(function ($stateProvider, $urlRouterProvider) {
                     templateUrl: "views/screens/artists.html"
                 }
             }
-        })
-        .state('app.cds', {
+        },
+        'app.cds': {
             url: "/cds",
             views: {
                 'menuContent': {
@@ -44,8 +45,8 @@ angular.module("mt").config(function ($stateProvider, $urlRouterProvider) {
                     controller: 'Cds'
                 }
             }
-        })
-        .state('app.cd', {
+        },
+        'app.cd': {
             url: "/cds/:id",
             views: {
                 'menuContent': {
@@ -53,8 +54,8 @@ angular.module("mt").config(function ($stateProvider, $urlRouterProvider) {
                     controller: 'CD'
                 }
             }
-        })
-        .state('app.events', {
+        },
+        'app.events': {
             url: "/events",
             views: {
                 'menuContent': {
@@ -62,8 +63,8 @@ angular.module("mt").config(function ($stateProvider, $urlRouterProvider) {
                     controller: 'Events'
                 }
             }
-        })
-        .state('app.event', {
+        },
+        'app.event': {
             url: "/event/:id",
             views: {
                 'menuContent': {
@@ -71,8 +72,8 @@ angular.module("mt").config(function ($stateProvider, $urlRouterProvider) {
                     controller: 'Event'
                 }
             }
-        })
-        .state('app.signup', {
+        },
+        'app.signup': {
             url: "/signup",
             views: {
                 'menuContent': {
@@ -80,8 +81,8 @@ angular.module("mt").config(function ($stateProvider, $urlRouterProvider) {
                     controller: 'Signup'
                 }
             }
-        })
-        .state('app.perfil', {
+        },
+        'app.perfil': {
             url: "/perfil/:id",
             views: {
                 'menuContent': {
@@ -89,7 +90,8 @@ angular.module("mt").config(function ($stateProvider, $urlRouterProvider) {
                     controller: 'Perfil'
                 }
             }
-        }).state('app.playlist', {
+        },
+        'app.playlist': {
             url: "/playlist",
             views: {
                 'menuContent': {
@@ -97,7 +99,20 @@ angular.module("mt").config(function ($stateProvider, $urlRouterProvider) {
                     controller: 'Playlist'
                 }
             }
-        });
-    // if none of the above states are matched, use this as the fallback
+        },
+        'app.search': {
+            url: "/buscar",
+            views: {
+                'menuContent': {
+                    templateUrl: "views/screens/search.html",
+                    controller: 'Search'
+                }
+            }
+        }
+    };
+    angular.forEach(routesConfig, function(value, key) {
+        console.log("route", key, value);
+        $stateProvider.state(key, value);
+    });
     $urlRouterProvider.otherwise('/app/home');
-});
+}
