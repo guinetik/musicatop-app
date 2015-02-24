@@ -6,6 +6,7 @@ function Perfil($scope, api, $stateParams, $timeout) {
     $scope.perfil = {};
     $scope.id = $stateParams.id;
     $scope.$on('$ionicView.beforeEnter', function (event) {
+        $scope.dataLoaded = false;
         $timeout($scope.updateProfile);
     });
     $scope.updateProfile = function () {
@@ -14,6 +15,7 @@ function Perfil($scope, api, $stateParams, $timeout) {
             console.log("updateProfile", result);
             if (result.status == 200) {
                 $scope.perfil = result.perfil;
+                $scope.dataLoaded = true;
             }
         })
     };

@@ -2,7 +2,8 @@
  * Created by guinetik on 2/20/15.
  */
 angular.module("mt")
-    .constant('API_URL', 'http://musicatop.jelastic.websolute.net.br/')
+    .constant('API_URL', 'http://localhost:1337/')
+    //.constant('API_URL', 'http://musicatop.jelastic.websolute.net.br/')
     .config(function (toastrConfig) {
         angular.extend(toastrConfig, {
             allowHtml: false,

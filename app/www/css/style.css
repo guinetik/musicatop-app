@@ -531,15 +531,12 @@ img.blur {
     -ms-animation-iteration-count: infinite;
     -ms-animation-timing-function: linear;
 }
-
-.profile-header .profile-cover img {
-    width: 100%;
-    max-height: 300px;
-}
-
 .profile-cover {
+    width: 100%;
+    top: 0;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
     height: 305px;
-    overflow: hidden;
     z-index: -1;
     position: absolute;
 }
@@ -547,7 +544,7 @@ img.blur {
 .profile-header {
     position: relative;
     top: 100px;
-    height: 305px;
+    height: 300px;
 }
 
 .profile-header .profile-dados {
@@ -715,4 +712,18 @@ img.blur {
 
 #item-search-music .item-royal .ion-play {
     color: #ffffff !important;
+}
+
+.user_about_item {
+    font: normal 14px "pf_square_sans_prolight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.item-artist h2 {
+    font: normal 18px "pf_square_sans_probold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.item-artist p {
+    font: normal 16px "pf_square_sans_proregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

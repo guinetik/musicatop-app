@@ -39,7 +39,6 @@
             <ion-list class="playlist">
                 <ion-item class="item-divider item-calm home_header">MÚSICAS</ion-item>
                 <ion-item class="item-icon-right"
-
                           ng-repeat="musica in cd.musicas|orderBy:'track'"
                           ng-class="{'item-royal':playlist[mediaPlayer.currentTrack-1].id==musica.id, 'item-stable':playlist[mediaPlayer.currentTrack-1].id!=musica.id}"
                           ng-click="addToPlaylist(musica)">

@@ -7,8 +7,8 @@
  * # Api
  * Service in the musicaApp.
  */
-angular.module('mt').service('api', ['ws', 'API_URL', api]);
-function api(ws, API_URL, blockUI) {
+angular.module('mt').service('api', ['ws', api]);
+function api(ws) {
     var api = this;
     api.getEstados = function (cb) {
         ws.consumeService("data/estados", null, null, cb, false, "GET");
@@ -94,6 +94,9 @@ function api(ws, API_URL, blockUI) {
     };
     api.getCDs = function (cb) {
         ws.consumeService("cd", null, null, cb, false, "GET");
+    };
+    api.getUsers = function (cb) {
+        ws.consumeService("usuarios/artists", null, null, cb, false, "GET");
     };
     api.getEvent = function (id, cb) {
         ws.consumeService("eventos/" + id, null, null, cb, false, "GET");

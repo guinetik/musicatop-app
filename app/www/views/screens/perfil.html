@@ -1,8 +1,8 @@
 <ion-view view-title="PERFIL">
     <ion-content>
-        <figure class="profile-cover">
-            <img src="http://placehold.it/1000x368"
-                 ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{perfil.usuario.capa}}">
+        <div ng-if="dataLoaded">
+            <figure class="profile-cover"
+                    ng-style="{background:'url(http://musicatop.jelastic.websolute.net.br/public/img/{{perfil.usuario.capa}})'}">
         </figure>
         <div class="profile_bg"></div>
         <header class="profile-header">
@@ -14,7 +14,7 @@
                 </figure>
                 <div class="info">
                     <h1 class="name">{{perfil.usuario.nome}}</h1>
-                    <p class="desc">{{perfil.usuario.cidade.nome}}wefwefwef</p>
+                    <p class="desc">{{perfil.usuario.cidade.nome}}</p>
                 </div>
                 <div class="redes">
                     <ul>
@@ -35,14 +35,19 @@
             </div>
         </header>
         <ion-list>
-            <ion-item class="item-divider item-calm home_header">COLEÇÃO</ion-item>
-            <ion-item class="item-thumbnail-left cd_item"
-                      ng-repeat="cd in perfil.cds"
-                      ui-sref="app.cd({id:cd.id})">
-                <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{cd.capa}}">
-                <h2 style="white-space: pre-wrap">{{cd.titulo|uppercase}}</h2>
-                <p><span class="cd_downloads">{{cd.downloads}} DOWNLOADS</span><br/>Adicionado <span am-time-ago="cd.createdAt"></span></p>
-            </ion-item>
+            <ion-item class="user_about_item"
+                      style="white-space: pre-wrap">{{perfil.usuario.about}}</ion-item>
+            <div ng-if="perfil.cds.length>0">
+                <ion-item class="item-divider item-calm home_header">COLEÇÃO</ion-item>
+                <ion-item class="item-thumbnail-left cd_item"
+                          ng-repeat="cd in perfil.cds"
+                          ui-sref="app.cd({id:cd.id})">
+                    <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{cd.capa}}">
+                    <h2 style="white-space: pre-wrap">{{cd.titulo|uppercase}}</h2>
+                    <p><span class="cd_downloads">{{cd.downloads}} DOWNLOADS</span><br/>Adicionado <span am-time-ago="cd.createdAt"></span></p>
+                </ion-item>
+            </div>
         </ion-list>
+        </div>
     </ion-content>
 </ion-view>
