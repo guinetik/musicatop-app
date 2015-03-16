@@ -1,7 +1,7 @@
 var ctrls = angular.module('mt.controllers', []);
-ctrls.controller('AppCtrl', function ($scope, $rootScope, $ionicModal, $timeout, $ionicSideMenuDelegate) {
+ctrls.controller('AppCtrl', function ($scope, $rootScope, $ionicModal, $timeout, $ionicSideMenuDelegate, mediaPlayer) {
     $scope.showPlayer = true;
-    $scope.nowPlaying = false;
+    $scope.mediaPlayer = mediaPlayer;
     $rootScope.playlist = [];
     $scope.isMenuOpened = function () {
         return $ionicSideMenuDelegate.isOpen()
@@ -40,9 +40,6 @@ ctrls.controller('AppCtrl', function ($scope, $rootScope, $ionicModal, $timeout,
             }, 100);
         }
     });
-    $scope.onPlayerReady = function(API) {
-      $rootScope.mediaPlayer = API;
-    };
     // Perform the login action when the user submits the login form
     $scope.doLogin = function () {
         console.log('Doing login', $scope.loginData);

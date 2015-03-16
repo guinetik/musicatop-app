@@ -9,15 +9,16 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="lib/angular-toastr/dist/angular-toastr.min.css" rel="stylesheet">
     <link href="lib/angular-block-ui/dist/angular-block-ui.min.css" rel="stylesheet">
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
 </head>
 
 <body ng-app="mt">
 <ion-nav-view></ion-nav-view>
 <!-- ionic/angularjs js -->
-<script src="lib/jquery-2.1.3.min.js"></script>
+<script src="lib/jquery/dist/jquery.min.js"></script>
 <script src="lib/ionic/js/ionic.bundle.js"></script>
+<script src="lib/ngCordova/dist/ng-cordova.js"></script>
+<!-- cordova script (this will be a 404 during development) -->
+<script src="cordova.js"></script>
 <script src="lib/angular-google-maps/dist/angular-google-maps.min.js"></script>
 <script src="lib/lodash/dist/lodash.min.js"></script>
 <script src="lib/underscore/underscore-min.js"></script>
@@ -28,7 +29,7 @@
 <script src="lib/angular-moment/angular-moment.min.js"></script>
 <script src="lib/videogular/videogular.min.js"></script>
 <script src="lib/angular-truncate/src/truncate.js"></script>
-<script src="lib/angular-media-player/dist/angular-media-player.js"></script>
+<!--<script src="lib/angular-media-player/dist/angular-media-player.js"></script>-->
 <script src="lib/angular-block-ui/dist/angular-block-ui.min.js"></script>
 <!-- your app's js -->
 <script src="js/config/utils.js"></script>
@@ -36,6 +37,7 @@
 <script src="js/services/api.js"></script>
 <script src="js/services/auth.js"></script>
 <script src="js/services/ws.js"></script>
+<script src="js/services/mediaPlayer.js"></script>
 <script src="js/ctrls/mt.controllers.js"></script>
 <script src="js/ctrls/Artists.js"></script>
 <script src="js/ctrls/CD.js"></script>

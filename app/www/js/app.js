@@ -9,8 +9,13 @@ angular.module('mt', [
     'truncate',
     'uiGmapgoogle-maps',
     'dcbImgFallback',
-    'mediaPlayer'
+    'ngCordova'
+    //'mediaPlayer'
 ]);
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+
+}
 angular.module("mt").run(function ($ionicPlatform, $rootScope) {
     $ionicPlatform.ready(function () {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard

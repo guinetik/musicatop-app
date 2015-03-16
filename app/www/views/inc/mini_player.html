@@ -2,11 +2,15 @@
             ng-if="nowPlaying">
     <a class="item item-avatar menu_play_item"
        ui-sref="app.playlist">
-        <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{playlist[mediaPlayer.currentTrack-1].cd.capa}}"
+        <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{playlist[mediaPlayer.currentTrack].cd.capa}}"
              class="menu_play_image">
-        <h3 style="margin-bottom: 0">{{playlist[mediaPlayer.currentTrack-1].title}}</h3>
+
+        <h3 style="margin-bottom: 0">{{playlist[mediaPlayer.currentTrack].title}}</h3>
+
         <p>
-            <small>{{playlist[mediaPlayer.currentTrack-1].cd.artista.nome}} - {{playlist[mediaPlayer.currentTrack-1].cd.titulo}}</small>
+            <small>{{playlist[mediaPlayer.currentTrack].cd.artista.nome}} -
+                {{playlist[mediaPlayer.currentTrack].cd.titulo}}
+            </small>
         </p>
     </a>
     <button ng-click="mediaPlayer.prev()"
