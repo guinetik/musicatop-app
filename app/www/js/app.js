@@ -8,8 +8,7 @@ angular.module('mt', [
     'angularMoment',
     'truncate',
     'uiGmapgoogle-maps',
-    'dcbImgFallback',
-    'ngCordova'
+    'dcbImgFallback'
     //'mediaPlayer'
 ]);
 document.addEventListener("deviceready", onDeviceReady, false);

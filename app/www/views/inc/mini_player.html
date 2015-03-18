@@ -16,8 +16,8 @@
     <button ng-click="mediaPlayer.prev()"
             class="button button-icon button-clear button-large button-royal ion-skip-backward"></button>
     <button ng-click="mediaPlayer.playPause()"
-            ng-class="{'ion-play':!mediaPlayer.playing, 'ion-pause':mediaPlayer.playing}"
-            class="button button-icon button-clear button-large ion-play button-royal menu_play_button"></button>
+            ng-class="{'ion-load-c ion-spin-animation':!mediaPlayer.loaded, 'ion-play':!mediaPlayer.nowPlaying&&mediaPlayer.loaded, 'ion-pause':mediaPlayer.nowPlaying&&mediaPlayer.loaded}"
+            class="button button-icon button-clear button-large button-royal menu_play_button"></button>
     <button ng-click="mediaPlayer.next()"
             class="button button-icon button-clear button-large button-royal ion-skip-forward"></button>
 </ion-footer>

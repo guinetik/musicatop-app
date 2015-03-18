@@ -1,7 +1,7 @@
 var ctrls = angular.module('mt.controllers', []);
 ctrls.controller('AppCtrl', function ($scope, $rootScope, $ionicModal, $timeout, $ionicSideMenuDelegate, mediaPlayer) {
     $scope.showPlayer = true;
-    $scope.mediaPlayer = mediaPlayer;
+    $rootScope.mediaPlayer = mediaPlayer;
     $rootScope.playlist = [];
     $scope.isMenuOpened = function () {
         return $ionicSideMenuDelegate.isOpen()

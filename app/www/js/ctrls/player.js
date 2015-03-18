@@ -53,12 +53,12 @@ function PlayerCtrl($scope, $rootScope, $timeout, $filter, API_URL, $sce) {
             );
             $(".progress").width(0);
             $scope.playload = false;
-            $timeout(function () {
-                $scope.playload = true;
-                $scope.mediaPlayer.play(0, false);
-                functions.playlist.show();
-            }, 50);
         });
+        $timeout(function () {
+            $scope.playload = true;
+            $scope.mediaPlayer.play(0, false);
+            functions.playlist.show();
+        }, 50);
     });
     $rootScope.$on("add-to-playlist", function (event, music) {
         console.log("add-to-playlist", music);

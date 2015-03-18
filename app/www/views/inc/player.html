@@ -30,7 +30,7 @@
             <button ng-click="mediaPlayer.prev()"
                     class="button button-icon button-clear button-large button-light ion-skip-backward player_prev_button"></button>
         <button ng-click="mediaPlayer.playPause()"
-                ng-class="{'ion-play':!mediaPlayer.nowPlaying, 'ion-pause':mediaPlayer.nowPlaying}"
+                ng-class="{'ion-load-c ion-spin-animation':!mediaPlayer.loaded, 'ion-play':!mediaPlayer.nowPlaying&&mediaPlayer.loaded, 'ion-pause':mediaPlayer.nowPlaying&&mediaPlayer.loaded}"
                 class="button button-icon button-clear button-large button-light main_menu_play_button"></button>
         <button ng-click="mediaPlayer.next()"
                 class="button button-icon button-clear button-large button-light ion-skip-forward player_next_button"></button>
