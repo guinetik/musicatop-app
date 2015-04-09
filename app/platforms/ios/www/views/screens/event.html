@@ -1,0 +1,53 @@
+<ion-view view-title="EVENTO">
+    <ion-content>
+        <div ng-if="dataLoaded">
+            <figure class="profile-cover"
+                    ng-style="{background:'url(http://musicatop.jelastic.websolute.net.br/public/img/{{evento.foto}})'}">
+            </figure>
+            <div class="profile_bg"></div>
+            <header class="profile-header">
+                <div class="profile-dados clearfix">
+                    <figure class="avatar">
+                        <img src="http://placehold.it/124x124"
+                             style="width: 116px;height: 116px;"
+                             ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{evento.usuario.foto}}">
+                    </figure>
+                    <div class="info">
+                        <h1 class="name">{{evento.nome}}</h1>
+                        <p class="desc">{{evento.cidade.nome}} / {{evento.inicio| amCalendar}} - {{evento.fim| amCalendar}}</p>
+                    </div>
+                    <div class="redes">
+                        <ul>
+                            <li><a ng-href="{{'http://instagram.com/' + evento.usuario.instagram}}"
+                                   target="_blank"
+                                   title="Instagram"
+                                   class="instagram">Instagram</a></li>
+                            <li><a ng-href="{{'http://twitter.com/' + evento.usuario.twitter}}"
+                                   target="_blank"
+                                   title="Twitter"
+                                   class="twitter">Twitter</a></li>
+                            <li><a ng-href="{{'http://facebook.com/' + evento.usuario.facebook}}"
+                                   target="_blank"
+                                   title="Facebook"
+                                   class="facebook">Facebook</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            <ion-list>
+                <ion-item class="user_about_item"
+                          style="white-space: pre-wrap">{{evento.descricao}}</ion-item>
+                <ion-item class="item-divider item-calm home_header">LOCAL</ion-item>
+                <ui-gmap-google-map center='map.center'
+                                    zoom='map.zoom'
+                                    options="map.options">
+                    <ui-gmap-marker coords="marker.coords"
+                                    options="marker.options"
+                                    events="marker.events"
+                                    idkey="marker.id">
+                    </ui-gmap-marker>
+                </ui-gmap-google-map>
+            </ion-list>
+        </div>
+    </ion-content>
+</ion-view>

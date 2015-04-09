@@ -1,0 +1,40 @@
+<ion-footer class="calm-bg button-block main_footer"
+            ng-controller="PlayerCtrl">
+    <div ng-if="nowPlaying">
+        <a href="javascript:void(0)"
+           class="playlist-plug"
+           title="Esconder Playlist"
+           ng-click="togglePlayer()"><span class="icon"></span>Esconder</a>
+    <div id="playlist"
+         style="height: 125px;"
+         class="visible">
+        <a class="item item-avatar menu_play_item"
+           ui-sref="app.playlist"
+           menu-close>
+            <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{playlist[mediaPlayer.currentTrack].cd.capa}}"
+                 class="menu_play_image">
+            <h3 class="royal"
+                style="margin-bottom: 0">{{playlist[mediaPlayer.currentTrack].title}}</h3>
+            <p>
+                <small>{{playlist[mediaPlayer.currentTrack].cd.titulo}}</small>
+            </p>
+        </a>
+        <div class="playlist-controls-progress-slider"
+             ng-click="mediaPlayer.seek(mediaPlayer.duration * seekPercentage($event))">
+            <div class="progress-bar"
+                 ng-style="{ width: mediaPlayer.currentPosition*100/mediaPlayer.duration + '%' }">
+            </div>
+        </div>
+        <span class="playlist-controls-time">{{mediaPlayer.formatTime}}/{{mediaPlayer.formatDuration}}</span>
+        <div style="margin-top: 20px">
+            <button ng-click="mediaPlayer.prev()"
+                    class="button button-icon button-clear button-large button-light ion-skip-backward player_prev_button"></button>
+        <button ng-click="mediaPlayer.playPause()"
+                ng-class="{'ion-load-c ion-spin-animation':!mediaPlayer.loaded, 'ion-play':!mediaPlayer.nowPlaying&&mediaPlayer.loaded, 'ion-pause':mediaPlayer.nowPlaying&&mediaPlayer.loaded}"
+                class="button button-icon button-clear button-large button-light main_menu_play_button"></button>
+        <button ng-click="mediaPlayer.next()"
+                class="button button-icon button-clear button-large button-light ion-skip-forward player_next_button"></button>
+        </div>
+    </div>
+    </div>
+</ion-footer>

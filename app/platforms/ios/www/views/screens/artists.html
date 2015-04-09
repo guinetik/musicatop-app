@@ -1,0 +1,37 @@
+<ion-view view-title="ARTISTAS">
+    <ion-content class="calm-bg">
+        <div ng-if="dataLoaded">
+        <div class="list card"
+             ng-repeat="user in users|orderBy:'t':true">
+            <a class="item item-avatar item-stable item-artist"
+               ui-sref="app.perfil({id:user.id})">
+                <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{user.foto}}">
+                <h2 class="calm">{{user.nome}}</h2>
+                <p>{{user.cidade.nome}}</p>
+            </a>
+            <div class="item item-body"
+                 style="padding: 0">
+                <img class="full-image"
+                     ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{user.capa}}">
+                <p class="user_about_item"
+                   style="padding: 10px;padding-top: 0;margin-top: 5px">{{user.about}}</p>
+            </div>
+           <div ng-if="user.cds.length>0">
+               <ion-item class="item-divider item-royal home_header item-divider">ÚLTIMOS CDS</ion-item>
+               <ion-item class="item-thumbnail-left cd_item"
+                         ng-repeat="cd in user.cds"
+                         ui-sref="app.cd({id:cd.id})">
+                    <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{cd.capa}}">
+                    <h2 style="white-space: pre-wrap">{{cd.titulo|uppercase}}</h2>
+                    <p>POR: {{cd.artista.nome|uppercase}}
+                        <br/>
+                        <span class="cd_downloads">{{cd.downloads}} DOWNLOADS</span>
+                        <br/>
+                        <span am-time-ago="cd.createdAt"></span>
+                    </p>
+                </ion-item>
+           </div>
+        </div>
+        </div>
+    </ion-content>
+</ion-view>

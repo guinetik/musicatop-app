@@ -1,0 +1,19 @@
+<ion-view view-title="EVENTOS">
+    <ion-content>
+        <ion-list>
+            <ion-item class="item-avatar item_evento"
+                      ng-repeat="evento in eventos"
+                      ui-sref="app.event({id:evento.id})">
+                <div class="event_title">
+                    <h2>{{evento.nome}}</h2>
+                    <p>
+                        <strong class="dates">{{evento.inicio| amCalendar}}</strong>
+                        <br/>
+                        <span class="local">{{evento.local.name}}/ {{evento.cidade.nome}}</span>
+                    </p></div>
+                <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{evento.foto}}"
+                     class="event_picture">
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,796 @@
+@font-face {
+    font-family: "pf_square_sans_probold";
+    src: url("fonts/pfsquaresanspro-bold-webfont.eot");
+    src: url("fonts/pfsquaresanspro-bold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/pfsquaresanspro-bold-webfont.woff2") format("woff2"), url("fonts/pfsquaresanspro-bold-webfont.woff") format("woff"), url("fonts/pfsquaresanspro-bold-webfont.ttf") format("truetype"), url("fonts/pfsquaresanspro-bold-webfont.svg#pf_square_sans_probold") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "pf_square_sans_proextra_black";
+    src: url("fonts/pfsquaresanspro-xblack-webfont.eot");
+    src: url("fonts/pfsquaresanspro-xblack-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/pfsquaresanspro-xblack-webfont.woff2") format("woff2"), url("fonts/pfsquaresanspro-xblack-webfont.woff") format("woff"), url("fonts/pfsquaresanspro-xblack-webfont.ttf") format("truetype"), url("fonts/pfsquaresanspro-xblack-webfont.svg#pf_square_sans_proextra_black") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "pf_square_sans_proregular";
+    src: url("fonts/pfsquaresanspro-regular-webfont.eot");
+    src: url("fonts/pfsquaresanspro-regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/pfsquaresanspro-regular-webfont.woff2") format("woff2"), url("fonts/pfsquaresanspro-regular-webfont.woff") format("woff"), url("fonts/pfsquaresanspro-regular-webfont.ttf") format("truetype"), url("fonts/pfsquaresanspro-regular-webfont.svg#pf_square_sans_proregular") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "pf_square_sans_prolight";
+    src: url("fonts/pfsquaresanspro-light-webfont.eot");
+    src: url("fonts/pfsquaresanspro-light-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/pfsquaresanspro-light-webfont.woff2") format("woff2"), url("fonts/pfsquaresanspro-light-webfont.woff") format("woff"), url("fonts/pfsquaresanspro-light-webfont.ttf") format("truetype"), url("fonts/pfsquaresanspro-light-webfont.svg#pf_square_sans_prolight") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.menu_play_item {
+    max-height: 60px;
+    padding-left: 50px;
+    padding-top: 12px;
+    min-height: 60px;
+}
+
+.menu_play_item h3 {
+    font-family: "pf_square_sans_proregular";
+}
+
+.menu_play_item p {
+    font-family: "pf_square_sans_proregular";
+    font-size: 16px;
+}
+
+.header-item {
+    font-family: "pf_square_sans_proextra_black";
+    font-size: 18px !important;
+}
+
+.menu_play_button {
+    margin-left: 30%;
+    margin-right: 26%;
+}
+
+.main_menu_play_button {
+    position: absolute;
+    left: 50%;
+    margin-top: -5px;
+    margin-left: -15px;
+    font-size: 32px;
+}
+
+.main_footer {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    z-index: 100000;
+    width: 100%;
+}
+
+.menu_play_image {
+    left: 5px !important;
+    top: 10px !important;
+    border-radius: 5px !important;
+}
+
+.slider {
+    height: auto;
+    min-height: 200px;
+}
+
+.slider .slider-pager {
+    bottom: 20px;
+}
+
+.slider .slider-pager .icon {
+    color: white;
+}
+
+.home_slide {
+    min-height: 100%;
+}
+
+.home_slide img {
+    width: 100%;
+    min-height: 200px;
+}
+
+.playlist-plug span {
+    width: 16px;
+    height: 16px;
+    background-position: -415px -82px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    background-image: url(http://musicatop.jelastic.websolute.net.br/app/images/sprite.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.playlist-plug:active {
+    background: white;
+}
+
+.playlist-plug {
+    display: block;
+    position: absolute;
+    right: 10px;
+    width: 60px;
+    height: 60px;
+    top: -60px;
+    background: #404a7d;
+    border: 1px solid #404a7d;
+    border-bottom: 0;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    -ms-border-radius: 4px 4px 0 0;
+    -o-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+    text-indent: -9999em;
+}
+
+.home_header {
+    text-transform: uppercase;
+    color: #404a7d;
+    font-size: 32px;
+    font-family: "pf_square_sans_prolight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: -0.08em;
+    line-height: 26px;
+    padding-left: 5px;
+}
+
+.menu_item {
+    font-family: "pf_square_sans_probold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+.menu_active .item-content {
+    border-color: #2f365b !important;
+    background-color: #f8f8f8 !important;
+    color: #e11d70 !important;
+}
+
+.playlist-plug.closed span {
+    background-position: -431px -82px;
+}
+
+.blur {
+    -webkit-filter: blur(10px);
+    filter: blur(10px);
+}
+
+.cd_cover_bg {
+    position: absolute;
+    width: 110% !important;
+    left: -5% !important;
+    top: -5% !important;
+    z-index: 0;
+    display: block;
+    height: 400px !important;
+}
+
+.cd_cover {
+    width: 200px;
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
+}
+
+.cd_header {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    display: block;
+}
+
+.cd_info_box {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+    display: block;
+}
+
+.cd_name {
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-size: 32px;
+    margin-top: 2% !important;
+    font-family: "pf_square_sans_prolight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: -0.05em;
+    text-shadow: 2px 2px 5px #000000;
+    text-transform: uppercase;
+}
+
+.cd_description {
+    font-family: "pf_square_sans_prolight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 10px;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.song_title {
+    font-family: "pf_square_sans_probold";
+    margin-left: 10px;
+}
+
+.track_number {
+    position: static !important;
+    font-family: "pf_square_sans_prolight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding-left: 7px;
+    padding-top: 4px;
+    float: left;
+    margin-left: -12px !important;
+    text-align: center;
+    width: 30px;
+}
+
+.cd_header .dados dl dt {
+    display: block;
+    text-transform: uppercase;
+    font: normal 11px "pf_square_sans_proregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: white;
+}
+
+.cd_header .dados dl dd {
+    font: normal 13px "pf_square_sans_probold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #e11d70;
+    text-align: center;
+}
+
+.cd_header .dados {
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    z-index: 10000;
+    top: 300px;
+    padding-top: 12px;
+    padding-left: 10px;
+    background: rgba(1, 1, 1, 0.6);
+    overflow: hidden;
+}
+
+.cd_upload_date {
+    position: absolute;
+    display: block;
+    left: 50%;
+    margin-left: -37px;
+}
+
+.dados dl:first-child {
+    margin-left: 0;
+}
+
+.dados dl:last-child {
+    float: right;
+    margin-right: 12px;
+}
+
+.dados dl {
+    float: left;
+}
+
+.item-container {
+    margin: 0;
+    min-height: 1px;
+    overflow: hidden;
+    padding: 36px 0 0 0;
+    position: relative;
+    width: 100%;
+}
+
+.list-sticky .item-divider {
+    bottom: auto;
+    left: 0;
+    line-height: 20px;
+    min-height: 1px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+}
+
+.item-divider.item-hidden {
+    visibility: hidden;
+}
+
+.item-container.item-animated .item-divider {
+    bottom: 0;
+    top: auto;
+}
+
+.cd-user {
+    position: absolute;
+    top: 260px;
+    right: 0;
+    z-index: 10000;
+    background: rgba(0, 0, 0, 0.5);
+    min-width: 120px;
+    height: 34px;
+    border-radius: 16px;
+    padding-right: 10px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.cd-user .avatar {
+    width: 34px;
+    height: 34px;
+    overflow: hidden;
+    display: block;
+    position: absolute;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+    border-radius: 100%;
+    border: 2px solid #ebeeef;
+}
+
+.cd-user small {
+    padding-top: 2px;
+    display: inline-block;
+    margin-left: 40px;
+    margin-top: 5px;
+    font-size: 11px;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 5px #000000;
+}
+
+.cd-user .user {
+    text-shadow: 1px 1px 5px #000000;
+    font-size: 14px;
+    display: inline;
+    font-family: "pf_square_sans_proregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.cd-user a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.cd_item .item-content p {
+    font-family: "pf_square_sans_proregular", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+.cd_item .item-content h2 {
+    color: #e11d70;
+    font-family: "pf_square_sans_probold" !important;
+}
+
+.cd_downloads {
+    color: #404a7d;
+    font-family: "pf_square_sans_probold" !important;
+}
+
+.event_picture {
+    max-width: 100%;
+    min-width: 100%;
+    position: absolute;
+    border-radius: 0 !important;
+    left: 0 !important;
+    top: 0 !important;
+    height: auto !important;
+    min-height: 130px !important;
+    max-height: initial !important;
+    z-index: 0;
+}
+
+.item_evento .item-content {
+    min-height: 130px !important;
+    max-height: 130px !important;
+}
+
+.event_title {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 30px;
+    margin: 0;
+    z-index: 30000;
+}
+
+.event_title h2 {
+    color: #FFFFFF;
+    padding-left: 5px;
+    font-size: 22px;
+    background: rgba(64, 74, 125, 0.8);
+    font-family: "pf_square_sans_prolight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-shadow: 2px 2px 5px #404a7d;
+    margin: 0;
+}
+
+.event_title p {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    top: 90px;
+    color: #000000;
+    padding-left: 5px;
+    font-size: 12px;
+    background: rgba(255, 255, 255, 0.7);
+    font-family: "pf_square_sans_proregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.player_next_button {
+    position: absolute;
+    right: 5%;
+    font-size: 28px;
+    margin-top: -5px;
+}
+
+.hidden {
+    display: none;
+}
+
+.player_prev_button {
+    margin-top: -5px;
+    font-size: 28px;
+    margin-left: 5%;
+}
+
+.playlist_capa {
+    border-radius: 2px;
+    width: 32px;
+    position: absolute;
+    margin-left: 10px;
+    top: 10px;
+}
+
+.playlist_title {
+    margin-left: 50px !important
+}
+
+.playlist .item-royal .song_title,
+.playlist .item-royal .icon {
+    color: #ffffff !important;
+}
+
+.progress-bar {
+    height: 16px;
+    background: #e11d70;
+    position: absolute;
+    left: 0;
+    top: -17px;
+    z-index: 1000;
+}
+
+.playlist-controls-progress-slider {
+    border-top: 18px solid #292952;
+    width: 100%;
+    top: 52px;
+    height: 30px;
+    position: absolute;
+    z-index: 10000;
+}
+
+.playlist-controls-time {
+    font-family: "pf_square_sans_proregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+    top: 51px;
+    right: 5px;
+    color: #ffffff;
+    z-index: 10000;
+}
+
+.menu_play_item h3 {
+    font-family: "pf_square_sans_probold" !important;
+}
+
+.block-ui-message {
+    font-family: "pf_square_sans_prolight" !important;
+    text-transform: uppercase;
+    color: #e11d70 !important;
+}
+
+@-webkit-keyframes spinnerRotate {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes spinnerRotate {
+    from {
+        -moz-transform: rotate(0deg);
+    }
+    to {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-ms-keyframes spinnerRotate {
+    from {
+        -ms-transform: rotate(0deg);
+    }
+    to {
+        -ms-transform: rotate(360deg);
+    }
+}
+
+.spin {
+    -webkit-animation-name: spinnerRotate;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spinnerRotate;
+    -moz-animation-duration: 2s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spinnerRotate;
+    -ms-animation-duration: 2s;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+}
+.profile-cover {
+    width: 100%;
+    top: 0;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    height: 305px;
+    z-index: -1;
+    position: absolute;
+}
+
+.profile-header {
+    position: relative;
+    top: 100px;
+    height: 305px;
+}
+
+.profile-header .profile-dados {
+    padding: 20px 40px 0 20px;
+    z-index: 2;
+
+}
+
+.profile-header .profile-dados .redes {
+    position: absolute;
+    left: 160px;
+    top: 105px;
+}
+
+.profile-header .profile-dados .avatar {
+    width: 124px;
+    height: 124px;
+    border: 4px #ebeeef solid;
+}
+
+.profile-header .profile-dados .info .name {
+    font: normal 30px "pf_square_sans_probold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #FFFFFF;
+    margin-top: 16px;
+    line-height: 10px;
+}
+
+.profile-header .profile-dados .info .desc {
+    font: normal 14px "pf_square_sans_proregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #EEEEEE;
+    margin-left: 2px;
+}
+
+.redes ul li a.instagram {
+    background-position: -343px 0;
+}
+
+.redes ul li a.twitter {
+    background-position: -379px 0;
+}
+
+.redes ul li a {
+    display: block;
+    overflow: hidden;
+    width: 36px;
+    height: 36px;
+    text-indent: -9999em;
+    background-image: url(http://musicatop.jelastic.websolute.net.br/app/images/sprite.png);
+    background-repeat: no-repeat;
+}
+
+.redes ul li a.facebook {
+    background-position: -415px 0;
+}
+
+.redes ul li:first-child {
+    margin-left: 0;
+}
+
+.redes ul li {
+    float: left;
+    margin-left: 8px;
+}
+
+.profile_bg {
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    top: 200px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#search-form .search-input {
+    width: 100%;
+    border: 1px solid #cacaca;
+    background: #fcfcfc;
+    color: #bababa;
+    padding-left: 20px;
+    padding-right: 70px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    height: 54px;
+    line-height: 16px;
+    -webkit-box-shadow: inset 1px 1px 0 white;
+    -moz-box-shadow: inset 1px 1px 0 white;
+    box-shadow: inset 1px 1px 0 white;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    font: normal 15px "pf_square_sans_proregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#search-form .search-button {
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    width: 54px;
+    height: 52px;
+    border: 0;
+    background: #f1f1f1;
+    cursor: pointer;
+    display: block;
+    text-indent: -9999em;
+    border-left: 1px solid #cacaca;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #e1e1e1));
+    background-image: -webkit-linear-gradient(#ffffff, #e1e1e1);
+    background-image: -moz-linear-gradient(#ffffff, #e1e1e1);
+    background-image: -o-linear-gradient(#ffffff, #e1e1e1);
+    background-image: linear-gradient(#ffffff, #e1e1e1);
+    -webkit-border-radius: 0 4px 4px 0;
+    -moz-border-radius: 0 4px 4px 0;
+    -ms-border-radius: 0 4px 4px 0;
+    -o-border-radius: 0 4px 4px 0;
+    border-radius: 0 4px 4px 0;
+}
+
+#search-form .search-button span {
+    width: 24px;
+    height: 24px;
+    background-position: -295px 0;
+    position: absolute;
+    left: 14px;
+    background-image: url(http://musicatop.jelastic.websolute.net.br/app/images/sprite.png);
+    top: 13px;
+}
+
+.message-empty {
+    padding-top: 40px;
+    background: white;
+    color: #888888;
+    text-align: center;
+    font: normal 16px "pf_square_sans_prolight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+.box-content {
+    border: 5px solid #eeeeee;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    left: 0;
+    right: 0;
+    top: 54px;
+    bottom: 0;
+    height: 100px;
+    position: absolute;
+}
+
+.search_music_author {
+    font: normal 10px "pf_square_sans_prolight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+#item-search-music .item-royal h2 {
+    color: #ffffff !important;
+}
+
+#item-search-music .item-royal .search_music_author {
+    color: #ffffff !important;
+}
+
+#item-search-music .item-royal .ion-play {
+    color: #ffffff !important;
+}
+
+.user_about_item {
+    font: normal 14px "pf_square_sans_prolight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.item-artist h2 {
+    font: normal 18px "pf_square_sans_probold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.item-artist p {
+    font: normal 16px "pf_square_sans_proregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.angular-google-map-container {
+    width: 100%;
+    height: 200px;
+}
+
+/* Hack for ionicicons v2 (no animation code) */
+.ion-spin-animation {
+    -webkit-animation: spin 1s infinite linear;
+    -moz-animation: spin 1s infinite linear;
+    -o-animation: spin 1s infinite linear;
+    animation: spin 1s infinite linear;
+}
+
+@-moz-keyframes spin {
+    0% {
+        -moz-transform: rotate(0deg);
+    }
+    100% {
+        -moz-transform: rotate(359deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+    }
+}
+
+@-o-keyframes spin {
+    0% {
+        -o-transform: rotate(0deg);
+    }
+    100% {
+        -o-transform: rotate(359deg);
+    }
+}
+
+@-ms-keyframes spin {
+    0% {
+        -ms-transform: rotate(0deg);
+    }
+    100% {
+        -ms-transform: rotate(359deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(359deg);
+    }
+}
+
+.ion-load-a.ion-spin-animation {
+    -webkit-animation-timing-function: steps(8, start);
+    -moz-animation-timing-function: steps(8, start);
+    animation-timing-function: steps(8, start);
+}
