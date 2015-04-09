@@ -1,9 +1,11 @@
 <ion-view view-title="PLAYLIST">
     <ion-nav-buttons side="right">
-        <button class="button button-icon button-clear ion-shuffle"
-                ng-click="shufflePlaylist()"></button>
-        <button class="button button-icon button-clear ion-trash-a"
-                ng-click="clearPlaylist()"></button>
+        <div style="width: 80px">
+            <button class="button button-icon button-clear ion-shuffle"
+                    ng-click="shufflePlaylist()"></button>
+            <button class="button button-icon button-clear ion-trash-a"
+                    ng-click="clearPlaylist()"></button>
+        </div>
     </ion-nav-buttons>
     <ion-content class="light-bg">
         <div ng-if="dataLoaded">
@@ -12,12 +14,14 @@
                 <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{playlist[mediaPlayer.currentTrack].cd.capa}}"
                      class="cd_cover_bg blur"
                      style="height: 330px!important;"/>
+
                 <div class="cd_info_box">
                     <h3 class="cd_name">{{playlist[mediaPlayer.currentTrack].title}}</h3>
+
                     <h3 class="cd_name">{{cd.titulo}}</h3>
                     <a ui-sref="app.cd({id:playlist[mediaPlayer.currentTrack].cd.id})"><img
                             ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{playlist[mediaPlayer.currentTrack].cd.capa}}"
-                                                                                              class="cd_cover"/></a>
+                            class="cd_cover"/></a>
                 </div>
                 <div class="cd-user"
                      style="top: 250px">

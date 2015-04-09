@@ -28,7 +28,8 @@ angular.module("mt").run(function ($ionicPlatform, $rootScope) {
         }
     });
     $rootScope.seekPercentage = function ($event) {
-        var percentage = ($event.offsetX / $event.target.offsetWidth);
+        var percentage = (($event.offsetX - 5) / $event.target.offsetWidth);
+        console.log("seekPercentage", $event.offsetX, $event.target.offsetWidth, percentage);
         if (percentage <= 1) {
             return percentage;
         } else {

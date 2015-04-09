@@ -22,7 +22,7 @@
         <div class="playlist-controls-progress-slider"
              ng-click="mediaPlayer.seek(mediaPlayer.duration * seekPercentage($event))">
             <div class="progress-bar"
-                 ng-style="{ width: mediaPlayer.currentTime*100/mediaPlayer.duration + '%' }">
+                 ng-style="{ width: mediaPlayer.currentPosition*100/mediaPlayer.duration + '%' }">
             </div>
         </div>
         <span class="playlist-controls-time">{{mediaPlayer.formatTime}}/{{mediaPlayer.formatDuration}}</span>

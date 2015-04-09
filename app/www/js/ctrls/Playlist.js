@@ -2,7 +2,7 @@
  * Created by guinetik on 2/20/15.
  */
 angular.module('mt.controllers').controller('Playlist', Playlist);
-function Playlist($scope, $rootScope, $timeout, $state, toastr) {
+function Playlist($scope, $rootScope, $timeout, $state, mediaPlayer) {
     $scope.$on('$ionicView.beforeEnter', function (event) {
         $scope.dataLoaded = false;
         $timeout($scope.updateList);
@@ -21,11 +21,12 @@ function Playlist($scope, $rootScope, $timeout, $state, toastr) {
     $scope.clearPlaylist = function () {
         $state.go("app.home");
         $rootScope.playlist = [];
+        mediaPlayer.stopAndRelease();
     };
     $scope.shufflePlaylist = function () {
         $rootScope.playlist = shuffleArray($rootScope.playlist);
         $timeout(function () {
-            $scope.mediaPlayer.play(0);
+            mediaPlayer.play(0);
         });
     };
     function shuffleArray(array) {

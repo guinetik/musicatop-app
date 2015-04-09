@@ -19,6 +19,13 @@
       "id": "org.crosswalk.engine",
       "locator": "./engine/cordova-crosswalk-engine-c0.6.2"
     },
-    "org.apache.cordova.media"
+    "org.apache.cordova.media",
+    "com.ionic.keyboard",
+    "org.apache.cordova.console",
+    "org.apache.cordova.device",
+    "org.apache.cordova.file"
+  ],
+  "cordovaPlatforms": [
+    "ios"
   ]
 }

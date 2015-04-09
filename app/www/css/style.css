@@ -105,8 +105,8 @@
     height: 16px;
     background-position: -415px -82px;
     position: absolute;
-    left: 11px;
-    top: 12px;
+    left: 20px;
+    top: 20px;
     background-image: url(http://musicatop.jelastic.websolute.net.br/app/images/sprite.png);
     background-repeat: no-repeat;
     display: inline-block;
@@ -120,9 +120,9 @@
     display: block;
     position: absolute;
     right: 10px;
-    width: 40px;
-    height: 40px;
-    top: -40px;
+    width: 60px;
+    height: 60px;
+    top: -60px;
     background: #404a7d;
     border: 1px solid #404a7d;
     border-bottom: 0;
