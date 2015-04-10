@@ -520,17 +520,25 @@
     NSString *mediaId = [self currentMediaId];
     NSString *nextString = [NSString stringWithFormat:@"%@(\"%@\",%d,%d);", @"cordova.require('org.apache.cordova.media.Media').onStatus", mediaId, MEDIA_STATE, MEDIA_NEXT];
     NSString *prevString = [NSString stringWithFormat:@"%@(\"%@\",%d,%d);", @"cordova.require('org.apache.cordova.media.Media').onStatus", mediaId, MEDIA_STATE, MEDIA_PREV];
+    NSString *playStrig = [NSString stringWithFormat:@"%@(\"%@\",%d,%d);", @"cordova.require('org.apache.cordova.media.Media').onStatus", mediaId, MEDIA_STATE, MEDIA_PLAY];
+    NSString *pauseString = [NSString stringWithFormat:@"%@(\"%@\",%d,%d);", @"cordova.require('org.apache.cordova.media.Media').onStatus", mediaId, MEDIA_STATE, MEDIA_PAUSE];
     switch (event.subtype) {
         case UIEventSubtypeRemoteControlTogglePlayPause:
             NSLog(@"TOGGLEPAUSE!!!");
             break;
         case UIEventSubtypeRemoteControlPlay:
             NSLog(@"PLAY!!!");
-            [self startPlayingAudio:nil];
+            if (playStrig) {
+                [self.commandDelegate evalJs:playStrig];
+            }
+//            [self startPlayingAudio:nil];
             break;
         case UIEventSubtypeRemoteControlPause:
             NSLog(@"PAUSE!!!");
-            [self pausePlayingAudio:nil];
+            if (pauseString) {
+                [self.commandDelegate evalJs:pauseString];
+            }
+//            [self pausePlayingAudio:nil];
             break;
         case UIEventSubtypeRemoteControlStop:
             NSLog(@"STOP!!!");

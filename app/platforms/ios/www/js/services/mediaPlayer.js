@@ -67,6 +67,11 @@ function mediaPlayer($rootScope, $timeout) {
             mediaPlayer.canGoNext = false;
             mediaPlayer.stopAndRelease();
             mediaPlayer.play(mediaPlayer.currentTrack);
+        } else {
+            mediaPlayer.nowPlaying = false;
+            mediaPlayer.loaded = true;
+            mediaPlayer.currentMedia.seek(0);
+            mediaPlayer.currentMedia.stop();
         }
     };
     mediaPlayer.seek = function (to) {
@@ -124,6 +129,7 @@ function mediaPlayer($rootScope, $timeout) {
     };
     mediaPlayer.pause = function () {
         mediaPlayer.nowPlaying = false;
+        mediaPlayer.paused = true;
         if (mediaPlayer.currentMedia != null) {
             mediaPlayer.currentMedia.pause();
         }
@@ -133,17 +139,25 @@ function mediaPlayer($rootScope, $timeout) {
         if (id == 2) {
             mediaPlayer.loaded = true;
             mediaPlayer.nowPlaying = true;
+            mediaPlayer.paused = false;
             mediaPlayer.updateTime();
         } else if (id < 2) {
             mediaPlayer.loaded = false;
-        } else if (id == 4) {
+        } else if(id == 3) {
+            mediaPlayer.paused = true;
+        }
+        else if (id == 4) {
             mediaPlayer.loaded = false;
             mediaPlayer.nowPlaying = false;
             if (mediaPlayer.canGoNext) mediaPlayer.next();
-        } else if(id == 5) {
+        } else if (id == 5) {
             mediaPlayer.next();
-        } else if(id == 6) {
+        } else if (id == 6) {
             mediaPlayer.prev();
+        } else if (id == 7) {
+            mediaPlayer.playPause()
+        } else if(id == 8) {
+            mediaPlayer.pause();
         }
         console.log("mediaPlayer.onMediaStatus", id, sts[id], mediaPlayer.loaded);
     };
@@ -153,6 +167,12 @@ function mediaPlayer($rootScope, $timeout) {
             mediaPlayer.formatTime = mediaPlayer.getFormatTime();
             mediaPlayer.formatDuration = mediaPlayer.getFormatDuration();
             $timeout(mediaPlayer.updateTime, 1000);
+        } else {
+            if(!mediaPlayer.paused) {
+                mediaPlayer.formatDuration = "";
+                mediaPlayer.formatTime = "";
+                mediaPlayer.duration = 0;
+            }
         }
     };
 }
