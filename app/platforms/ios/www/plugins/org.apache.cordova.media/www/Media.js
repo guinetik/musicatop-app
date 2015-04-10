@@ -75,7 +75,7 @@ Media.get = function(id) {
 Media.prototype.play = function(options) {
     exec(null, null, "Media", "startPlayingAudio", [this.id, this.src, options]);
 };
-Media.prototype.setupInfoCenter = function(options) {
+Media.prototype.setupInfoCenter = function (options) {
     exec(null, null, "Media", "setupInfoCenter", null);
 };
 

@@ -143,7 +143,7 @@ function mediaPlayer($rootScope, $timeout) {
             mediaPlayer.updateTime();
         } else if (id < 2) {
             mediaPlayer.loaded = false;
-        } else if(id == 3) {
+        } else if (id == 3) {
             mediaPlayer.paused = true;
         }
         else if (id == 4) {
@@ -156,7 +156,7 @@ function mediaPlayer($rootScope, $timeout) {
             mediaPlayer.prev();
         } else if (id == 7) {
             mediaPlayer.playPause()
-        } else if(id == 8) {
+        } else if (id == 8) {
             mediaPlayer.pause();
         }
         console.log("mediaPlayer.onMediaStatus", id, sts[id], mediaPlayer.loaded);
@@ -168,7 +168,7 @@ function mediaPlayer($rootScope, $timeout) {
             mediaPlayer.formatDuration = mediaPlayer.getFormatDuration();
             $timeout(mediaPlayer.updateTime, 1000);
         } else {
-            if(!mediaPlayer.paused) {
+            if (!mediaPlayer.paused) {
                 mediaPlayer.formatDuration = "";
                 mediaPlayer.formatTime = "";
                 mediaPlayer.duration = 0;

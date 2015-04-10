@@ -33,6 +33,8 @@
 
 @synthesize soundCache, avSession;
 
+@synthesize songInfo;
+
 // Maps a url for a resource path for recording
 - (NSURL *)urlForRecording:(NSString *)resourcePath {
     NSURL *resourceURL = nil;
@@ -311,7 +313,8 @@
                         audioFile.player.volume = [audioFile.volume floatValue];
                     }
                     if ([options objectForKey:@"songdata"] != NULL) {
-                        [self setInfoCenterInfo:[options objectForKey:@"songdata"] AndDuration:audioFile.player.duration];
+                        songInfo =  [options objectForKey:@"songdata"];
+                        [self setInfoCenterInfo:[options objectForKey:@"songdata"] AndDuration:audioFile.player.duration andPosition:0];
                     }
                     [audioFile.player play];
                     double position = round(audioFile.player.duration * 1000) / 1000;
@@ -513,6 +516,7 @@
         NSString *jsString = [NSString stringWithFormat:@"%@(\"%@\",%d,%.3f);", @"cordova.require('org.apache.cordova.media.Media').onStatus", mediaId, MEDIA_POSITION, position];
         [self.commandDelegate evalJs:jsString];
         [self.commandDelegate sendPluginResult:result callbackId:callbackId];
+        [self setInfoCenterInfo:songInfo AndDuration:(round(audioFile.player.duration * 1000) / 1000) andPosition:position];
     }];
 }
 
@@ -570,7 +574,7 @@
     }];
 }
 
-- (void)setInfoCenterInfo:(NSDictionary *)songdata AndDuration:(float)duration {
+- (void)setInfoCenterInfo:(NSDictionary *)songdata AndDuration:(float)duration andPosition:(float)pos {
 
     NSLog(@"Starting setInfoCenterInfo");
     [self.commandDelegate runInBackground:^{
@@ -594,7 +598,7 @@
                 [songInfo setObject:trackname forKey:MPMediaItemPropertyTitle];
                 [songInfo setObject:artist forKey:MPMediaItemPropertyArtist];
                 [songInfo setObject:[NSNumber numberWithFloat:duration] forKey:MPMediaItemPropertyPlaybackDuration];
-                [songInfo setObject:[NSNumber numberWithFloat:0.0] forKey:MPNowPlayingInfoPropertyElapsedPlaybackTime];
+                [songInfo setObject:[NSNumber numberWithFloat:pos] forKey:MPNowPlayingInfoPropertyElapsedPlaybackTime];
                 [songInfo setObject:[NSNumber numberWithFloat:1.0] forKey:MPNowPlayingInfoPropertyPlaybackRate];
                 [songInfo setObject:albumArt forKey:MPMediaItemPropertyArtwork];
                 [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:songInfo];
