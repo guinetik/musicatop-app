@@ -19,4 +19,7 @@ function Perfil($scope, api, $stateParams, $timeout) {
             }
         })
     };
+    $scope.processVote = function(){
+
+    };
 }

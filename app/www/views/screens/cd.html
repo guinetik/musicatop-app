@@ -3,12 +3,12 @@
         <div ng-if="dataLoaded">
             <section class="cd_header">
                 <figure class="profile-cover blur cd_cover_bg"
-                        ng-style="{background:'url(http://musicatop.jelastic.websolute.net.br/public/img/{{cd.capa}})'}">
+                        ng-style="{background:'url({{API_URL}}public/img/{{cd.capa}})'}">
                 </figure>
                 <div class="cd_info_box">
                     <h3 class="cd_name">{{cd.titulo}}</h3>
                     <a ng-click="addCdToPlaylist()">
-                        <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{cd.capa}}"
+                        <img ng-src="{{API_URL}}public/img/{{cd.capa}}"
                              class="cd_cover"/>
                     </a>
                 </div>
@@ -31,10 +31,15 @@
                 <div class="cd-user">
                     <a ui-sref="app.perfil({id:cd.artista.id})" class="user">
                         <span class="avatar">
-                            <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{cd.artista.foto}}"
+                            <img ng-src="{{API_URL}}public/img/{{cd.artista.foto}}"
                                  style="width: 34px;height:34px">
                         </span>
                     <small>por:</small> {{cd.artista.nome}}</a>
+
+                    <div style="float: right;margin-left: 10px;margin-top: 1.5px;margin-right:-5px">
+                        <button class="button button-royal button-small" ng-click="processVote()">Votar nesse artista
+                        </button>
+                    </div>
                 </div>
             </section>
             <ion-list class="playlist">

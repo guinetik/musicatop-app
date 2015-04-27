@@ -171,7 +171,7 @@
     top: -5% !important;
     z-index: 0;
     display: block;
-    height: 400px !important;
+    height: 450px !important;
 }
 
 .cd_cover {
@@ -492,47 +492,80 @@
     color: #e11d70 !important;
 }
 
-@-webkit-keyframes spinnerRotate {
+.spin::before {
+    line-height: 16px;
+    -webkit-animation: spin 1s infinite linear;
+    -moz-animation: spin 1s infinite linear;
+    -ms-animation: spin 1s infinite linear;
+    -o-animation: spin 1s infinite linear;
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
     from {
         -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
     }
     to {
-        -webkit-transform: rotate(360deg);
+        -webkit-transform: rotate(359deg);
+        -moz-transform: rotate(359deg);
+        -o-transform: rotate(359deg);
+        -ms-transform: rotate(359deg);
+        transform: rotate(359deg);
     }
+
 }
 
-@-moz-keyframes spinnerRotate {
+@-moz-keyframes spin {
     from {
         -moz-transform: rotate(0deg);
+        transform: rotate(0deg);
     }
     to {
-        -moz-transform: rotate(360deg);
+        -moz-transform: rotate(359deg);
+        transform: rotate(359deg);
     }
+
 }
 
-@-ms-keyframes spinnerRotate {
+@-webkit-keyframes spin {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+
+}
+
+@-ms-keyframes spin {
     from {
         -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
     }
     to {
-        -ms-transform: rotate(360deg);
+        -ms-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+
+}
+
+@-o-keyframes spin {
+    from {
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -o-transform: rotate(359deg);
+        transform: rotate(359deg);
     }
 }
 
-.spin {
-    -webkit-animation-name: spinnerRotate;
-    -webkit-animation-duration: 2s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
-    -moz-animation-name: spinnerRotate;
-    -moz-animation-duration: 2s;
-    -moz-animation-iteration-count: infinite;
-    -moz-animation-timing-function: linear;
-    -ms-animation-name: spinnerRotate;
-    -ms-animation-duration: 2s;
-    -ms-animation-iteration-count: infinite;
-    -ms-animation-timing-function: linear;
-}
 .profile-cover {
     width: 100%;
     top: 0;

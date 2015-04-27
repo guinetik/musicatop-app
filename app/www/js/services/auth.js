@@ -20,6 +20,21 @@ angular.module('mt').factory('auth', function ($window, $rootScope, api) {
             if (cachedToken == "-1") cachedToken = storage.getItem('userToken');
             return cachedToken;
         },
+        getUuid: function () {
+            if (window.device != null && window.device.uuid != null) {
+                console.log("device.uuid", device.uuid);
+                return device.uuid;
+            } else {
+                var storageUuid = storage.getItem("MUSICATOP_DEVICE_UUID");
+                if (storageUuid != null) {
+                    return storageUuid;
+                } else {
+                    storageUuid = md5(new Date().getTime());
+                    storage.setItem("MUSICATOP_DEVICE_UUID", storageUuid);
+                    return storageUuid;
+                }
+            }
+        },
         isAuthenticated: function () {
             //console.log("isAuth");
             return this.getToken() != "-1";

@@ -48,7 +48,7 @@ function ws($rootScope, $http, API_URL, blockUI, $timeout) {
         }).error(function (err, status) {
             blockUI.stop();
             console.log("errror");
-            cb({message: err, status: status});
+            cb({error: true, message: err, status: status});
         });
     }
 }

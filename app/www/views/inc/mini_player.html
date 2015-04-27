@@ -2,7 +2,7 @@
             ng-if="nowPlaying">
     <a class="item item-avatar menu_play_item"
        ui-sref="app.playlist">
-        <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{playlist[mediaPlayer.currentTrack].cd.capa}}"
+        <img ng-src="{{API_URL}}public/img/{{playlist[mediaPlayer.currentTrack].cd.capa}}"
              class="menu_play_image">
 
         <h3 style="margin-bottom: 0">{{playlist[mediaPlayer.currentTrack].title}}</h3>

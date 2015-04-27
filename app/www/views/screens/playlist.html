@@ -11,7 +11,7 @@
         <div ng-if="dataLoaded">
             <section class="cd_header"
                      style="height:300px">
-                <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{playlist[mediaPlayer.currentTrack].cd.capa}}"
+                <img ng-src="{{API_URL}}public/img/{{playlist[mediaPlayer.currentTrack].cd.capa}}"
                      class="cd_cover_bg blur"
                      style="height: 330px!important;"/>
 
@@ -20,13 +20,13 @@
 
                     <h3 class="cd_name">{{cd.titulo}}</h3>
                     <a ui-sref="app.cd({id:playlist[mediaPlayer.currentTrack].cd.id})"><img
-                            ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{playlist[mediaPlayer.currentTrack].cd.capa}}"
+                            ng-src="{{API_URL}}public/img/{{playlist[mediaPlayer.currentTrack].cd.capa}}"
                             class="cd_cover"/></a>
                 </div>
                 <div class="cd-user"
                      style="top: 250px">
                     <span class="avatar">
-                        <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{playlist[mediaPlayer.currentTrack].cd.artista.foto}}"
+                        <img ng-src="{{API_URL}}public/img/{{playlist[mediaPlayer.currentTrack].cd.artista.foto}}"
                              style="width: 34px;height:34px">
                     </span>
                     <small>por:</small>
@@ -40,7 +40,7 @@
                           ng-repeat="musica in playlist"
                           ng-class="{'item-royal':playlist[mediaPlayer.currentTrack].id==musica.id, 'item-stable':playlist[mediaPlayer.currentTrack].id!=musica.id}">
                     <span class="badge badge-calm track_number">{{mostraZero($index+1)}}</span>
-                    <img ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{musica.cd.capa}}"
+                    <img ng-src="{{API_URL}}public/img/{{musica.cd.capa}}"
                          class="playlist_capa"/>
                     <span class="song_title royal playlist_title">{{musica.title}}</span>
                     <i class="icon ion-play royal"></i>

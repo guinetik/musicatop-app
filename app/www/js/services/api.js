@@ -159,4 +159,34 @@ function api(ws) {
         }, true, "GET", false);
 
     };
+    api.voteForArtist = function (artist, mobile_id, cb) {
+        console.log("api.voteForArtist", artist);
+        ws.consumeService("http://votofestival.com.br/principal/time", null, null, function (result) {
+            if (!result.error && result.time) {
+                console.log("time", result.time);
+                var date = moment(result.time).toDate();
+                console.log("date", date);
+                var secret = "dalejaum100";
+                var fDate = mZero(date.getMonth() + 1) + mZero(date.getMinutes()) + date.getFullYear().toString() + mZero(date.getDate()) + mZero(date.getHours());
+                console.log("fDate", fDate);
+                var hash = fDate + secret;
+                var mobile_banda_nome = artist.usuario.nome;
+                var mobile_banda_id = artist.usuario.id;
+                var token = md5(hash);
+                var params = {
+                    token: token,
+                    mobile_banda_id: mobile_banda_id,
+                    mobile_banda_nome: mobile_banda_nome,
+                    mobile_id: mobile_id
+                };
+                console.log("params", params);
+                ws.consumeService("http://votofestival.com.br/principal/votarMobile", params, null, function (result) {
+                    console.log("votarMobile", result);
+                }, true, "POST", true);
+            } else {
+                console.log("cb(false)", result);
+                cb(result);
+            }
+        }, true, "POST", true);
+    };
 }

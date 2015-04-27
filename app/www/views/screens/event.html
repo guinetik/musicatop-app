@@ -2,7 +2,7 @@
     <ion-content>
         <div ng-if="dataLoaded">
             <figure class="profile-cover"
-                    ng-style="{background:'url(http://musicatop.jelastic.websolute.net.br/public/img/{{evento.foto}})'}">
+                    ng-style="{background:'url({{API_URL}}public/img/{{evento.foto}})'}">
             </figure>
             <div class="profile_bg"></div>
             <header class="profile-header">
@@ -10,7 +10,7 @@
                     <figure class="avatar">
                         <img src="http://placehold.it/124x124"
                              style="width: 116px;height: 116px;"
-                             ng-src="http://musicatop.jelastic.websolute.net.br/public/img/{{evento.usuario.foto}}">
+                             ng-src="{{API_URL}}public/img/{{evento.usuario.foto}}">
                     </figure>
                     <div class="info">
                         <h1 class="name">{{evento.nome}}</h1>

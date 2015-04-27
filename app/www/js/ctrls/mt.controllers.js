@@ -1,5 +1,6 @@
 var ctrls = angular.module('mt.controllers', []);
-ctrls.controller('AppCtrl', function ($scope, $rootScope, $ionicModal, $timeout, $ionicSideMenuDelegate, mediaPlayer) {
+ctrls.controller('AppCtrl', function ($scope, $rootScope, $ionicModal, $timeout, $ionicSideMenuDelegate, mediaPlayer, API_URL) {
+    $rootScope.API_URL = API_URL;
     $scope.showPlayer = true;
     $rootScope.mediaPlayer = mediaPlayer;
     $rootScope.playlist = [];
